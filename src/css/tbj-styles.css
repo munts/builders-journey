@@ -117,7 +117,7 @@ input, select {vertical-align:middle;}
     padding-bottom:10px;
 }
 
-#main-container {margin-top:-15px;} /* -60 if slider is used */
+#main-container {margin-top: 60px;} /* -60 if slider is used */
 
 #nav.affix {
     position: fixed;
