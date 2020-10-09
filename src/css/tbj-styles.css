@@ -1092,6 +1092,7 @@ and (min-width : 1224px) {
 and (min-width : 1200px) {
     #purpose-bottom {height:700px; position:relative;}
     .header-container.container {
+        margin: 15px auto;
         width: 1120px;
     }
     img.desaturate-no {max-width:500px;}
