@@ -477,12 +477,10 @@ img.grayscale {
 .footer {font-size: 15px;}
 .footer_widget .widget_title,
 .footer_widget .widget_area a{ color: #fff;}
-.footer a {}
 .footer p { font-size: 15px; color: #d7d7d7;}
 .footer ul {padding-left: 0;list-style: none;font-size: 15px;}
 .footer .widget_area ul li { margin-left: 0; padding-bottom: 8px; margin-bottom: 11px;border-bottom: 1px dotted #596570;}
 .footer ul li ul{ margin: 0; padding: 0;}
-.footer ul li li{}
 .widget_area ul li:last-child { margin-bottom: 0; padding-bottom: 0;border-bottom: 0;}
 .widget_area ul li li:last-child {margin-bottom: 0; padding-bottom: 0; border-bottom: 0;}
 .footer ul li a {color: #d7d7d7;}
@@ -523,7 +521,6 @@ div#tagger {padding-top: 15px;}*/
 /*.left-block, .right-block{width: 320px;}
 .middle-block{width: 400px;}*/
 .block-margin{  height: 80px;}
-.block-wrap{}
 .block-wrap>div{border: 3px solid #6d6d6d;}
 .since1994 strong {font-size: 1em; line-height:.6em;letter-spacing:5px;}
 #floorplan{margin: 0 auto 50px auto;}
@@ -670,11 +667,6 @@ img.desaturate-no {padding:10px 0 10px 40px;margin-top:30px;}
 }
 
 /* assets/wp-content/uploads/2018/04/sketch2-full-sketch.png = old sketch */
-
-/* add flickity carousel styles here */
-#flick-container{}
-#flick{}
-.flickity{}
 
 #sevenStepModal {z-index: 9999;}
 
@@ -846,8 +838,10 @@ and (max-width: 768px) {
     }
 
     .navbar-nav>li {
+        display: inline-block !important;
         padding: 0 8px;
     }
+
     #purpose-bottom {height:300px;}
     .bottom-info {margin-top:130px;}
     .cta-content {width:50%; margin:0 0 0 45%;}
@@ -857,6 +851,7 @@ and (max-width: 768px) {
         margin-top:5px;
         width:100%;
     }
+
     #header {
         background:transparent;
     }
@@ -999,6 +994,13 @@ and (orientation : portrait) {
         margin-left: -48px;
     }
 
+}
+
+@media (min-width: 768px) {
+    .navbar-nav>li {
+        display: inline-block !important;
+        float: none;
+    }
 }
 
 

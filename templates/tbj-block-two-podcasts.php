@@ -11,7 +11,7 @@
 <div id="podcast-section" class="container blog-content">
     <div class="row">
         <div id="podcasts" class="col-xs-12 centered" style="padding-bottom:30px;">
-            <h1 style="padding-bottom:30px;">The Builders Journey Latest Episodes</h1>
+            <h1 style="padding-bottom:30px;">The Builder's Journey Latest Episodes</h1>
         </div>
     </div>
     <div class="row">
