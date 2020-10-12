@@ -21,7 +21,7 @@ $podId = get_post_meta($post->ID, '_one_podcast_episode_id', true);
 
         <div class="fullwidthbanner-container container blog-hero">
             <div class="row">
-                <div class="col-xs-12 hero-container" style="min-height:200px;">
+                <div class="col-xs-12 hero-container" style="min-height:100px;">
 
                 </div>
             </div>

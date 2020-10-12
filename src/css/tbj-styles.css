@@ -683,7 +683,7 @@ h2 a:hover {color:#be1e2d;}
 .tween1,.tween2,.tween3,.tween4,.tween5,.tween6,.tween7,.tween8,.tween9,.tween10 {font-size:32px;color:#000000;}
 #pbTrigger, #etTrigger {font-size:32px;}
 
-.podcasts-template-default a{color:#be1e2d;}
+.podcasts-template-default a {color:#be1e2d;}
 
 
 /*====================Start Media Queries==================*/
@@ -731,6 +731,7 @@ and (max-device-width : 480px) {
 .social-row{min-height:60px;padding:30px 0;}
 .blog-content {display:block; position:relative; padding-top:30px;}
 .pod-details {font-size:10px;font-weight:900;}
+.light-version {padding: 15px 0;}
 
 .sticky-wrapper{position:relative;z-index:3500;}
 
