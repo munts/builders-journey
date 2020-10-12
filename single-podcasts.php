@@ -76,6 +76,32 @@ $podId = get_post_meta($post->ID, '_one_podcast_episode_id', true);
                         </div>
                     <?php } ?>
                 </div>
+                <div class="row" style="padding:60px 0 30px 0; text-align: center;">
+                    <h3>Want More? Listen to the Previous or Next Episode...</h3>
+                </div>
+                <div class="row">
+                    <div class="podcast-pagination" style="text-align: center;">
+                        <div class="prev-posts" style="padding: 10px;">
+                            <?php
+                            $prev_post = get_previous_post();
+                            if($prev_post) {
+                            $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
+                            echo "\t" . '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" class=""> <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> </a> ' . ' <a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" class=" ">'. $prev_title . '</a>' . "\n";
+                                            }
+                            ?>
+                        </div>
+
+                        <div class="next-posts" style="padding: 10px;">
+                            <?php
+                            $next_post = get_next_post();
+                            if($next_post) {
+                            $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
+                            echo "\t" . '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title. '" class=""> '. $next_title . ' <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></a>' . "\n";
+                                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         <?php endwhile;
         get_template_part('templates/footer-block-post');
