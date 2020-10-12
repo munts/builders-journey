@@ -14,13 +14,14 @@ global $post;
 $imageUrl = wp_get_attachment_url( get_post_thumbnail_id() );
 $images = get_field('gallery');
 $podDescription = wpautop( get_post_meta($post->ID, '_one_podcast_description', true));
+$podId = get_post_meta($post->ID, '_one_podcast_episode_id', true);
 
 ?>
     <div id="main-container" class="container-fluid">
 
         <div class="fullwidthbanner-container container blog-hero">
             <div class="row">
-                <div class="col-xs-12 hero-container" style="">
+                <div class="col-xs-12 hero-container" style="min-height:200px;">
 
                 </div>
             </div>
@@ -34,6 +35,9 @@ $podDescription = wpautop( get_post_meta($post->ID, '_one_podcast_description', 
                     <?php if (empty($images)) { ?>
                         <div class="col-xs-12 section-title-wrapper" style="padding:15px;">
                             <h1 class="light-version"><?= the_title(); ?></h1>
+                            <?php
+                                echo '<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/'. $podId . '/height/90/theme/custom/thumbnail/yes/preload/no/direction/backward/render-playlist/no/custom-color/145da1/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>';
+                            ?>
                             <p><?= the_content(); ?></p>
                             <p><?= $podDescription; ?></p>
                         </div>
@@ -41,6 +45,9 @@ $podDescription = wpautop( get_post_meta($post->ID, '_one_podcast_description', 
                     else { ?>
                         <div class="col-xs-12 col-sm-8 section-title-wrapper" style="padding:15px;">
                             <h1 class="light-version"><?= the_title(); ?></h1>
+                            <?php
+                                echo '<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/'. $podId . '/height/90/theme/custom/thumbnail/yes/preload/no/direction/backward/render-playlist/no/custom-color/145da1/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>';
+                            ?>
                             <p><?= the_content(); ?></p>
                             <p><?= $podDescription; ?></p>
                         </div>
