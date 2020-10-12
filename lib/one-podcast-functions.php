@@ -47,7 +47,7 @@ function one_register_podcast_metabox() {
 
     $cmb_demo->add_field( array(
         'name' => __( 'Podcast Episode ID', 'cmb2' ),
-        'desc' => __( 'field description (optional)', 'cmb2' ),
+        'desc' => __( 'Required for the site to work correctly', 'cmb2' ),
         'id'   => $prefix . 'episode_id',
         'type' => 'text',
         // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
@@ -65,7 +65,7 @@ function one_register_podcast_metabox() {
 
     $cmb_demo->add_field( array(
         'name' => __( 'Podcast video url', 'cmb2' ),
-        'desc' => __( 'field description (optional)', 'cmb2' ),
+        'desc' => __( 'If a video exists', 'cmb2' ),
         'id'   => $prefix . 'video_url',
         'type' => 'text',
         // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
@@ -73,18 +73,20 @@ function one_register_podcast_metabox() {
     ) );
 
     $cmb_demo->add_field( array(
-        'name'    => __( 'Podcast Notes Content', 'cmb2' ),
-        'desc'    => __( 'This is where you enter the Podcast Notes provided by Travis.', 'cmb2' ),
-        'id'      => $prefix . 'description',
-        'type'    => 'wysiwyg',
-        'options' => array( 'textarea_rows' => 5, ),
-    ) );
-    $cmb_demo->add_field( array(
         'name'    => __( 'Podcast Short Description Content', 'cmb2' ),
-        'desc'    => __( 'This is where you enter a short description of the podcast.', 'cmb2' ),
+        'desc'    => __( 'This is where you enter a short description of the podcast.  It will appear above the Notes', 'cmb2' ),
         'id'      => $prefix . 'short_description',
         'type'    => 'wysiwyg',
         'options' => array( 'textarea_rows' => 2, ),
     ) );
+
+    $cmb_demo->add_field( array(
+        'name'    => __( 'Podcast Notes Content', 'cmb2' ),
+        'desc'    => __( 'This is where you enter the Podcast Notes provided by Travis or whoever does them.', 'cmb2' ),
+        'id'      => $prefix . 'description',
+        'type'    => 'wysiwyg',
+        'options' => array( 'textarea_rows' => 5, ),
+    ) );
+    
 
 }
