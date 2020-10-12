@@ -15,6 +15,7 @@ $imageUrl = wp_get_attachment_url( get_post_thumbnail_id() );
 $images = get_field('gallery');
 $podDescription = wpautop( get_post_meta($post->ID, '_one_podcast_description', true));
 $podId = get_post_meta($post->ID, '_one_podcast_episode_id', true);
+$videoUrl = get_post_meta($post->ID, '_one_podcast_video_url', true);
 
 ?>
     <div id="main-container" class="container-fluid">
@@ -37,6 +38,11 @@ $podId = get_post_meta($post->ID, '_one_podcast_episode_id', true);
                             <h1 class="light-version"><?= the_title(); ?></h1>
                             <?php
                                 echo '<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/'. $podId . '/height/90/theme/custom/thumbnail/yes/preload/no/direction/backward/render-playlist/no/custom-color/145da1/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>';
+                                
+                                if (!empty($videoUrl)) {
+                                echo wp_oembed_get( $videoUrl );
+                                } 
+                                
                             ?>
                             <p><?= the_content(); ?></p>
                             <p><?= $podDescription; ?></p>
@@ -48,6 +54,9 @@ $podId = get_post_meta($post->ID, '_one_podcast_episode_id', true);
                             <?php
                                 echo '<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/'. $podId . '/height/90/theme/custom/thumbnail/yes/preload/no/direction/backward/render-playlist/no/custom-color/145da1/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>';
                             ?>
+                            <?php if (!empty($videoUrl)) {
+                                echo wp_oembed_get( $videoUrl );
+                            } ?>
                             <p><?= the_content(); ?></p>
                             <p><?= $podDescription; ?></p>
                         </div>
