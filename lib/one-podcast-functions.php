@@ -45,11 +45,10 @@ function one_register_podcast_metabox() {
         // 'closed'     => true, // true to keep the metabox closed by default
     ) );
 
-
     $cmb_demo->add_field( array(
-        'name' => __( 'Alternate Title', 'cmb2' ),
-        'desc' => __( 'This is the title that gets displayed in the middle Title Block container.  Ie. Purpose, but it can be changed to love or passion, etc.', 'cmb2' ),
-        'id'   => $prefix . 'top_title',
+        'name' => __( 'Podcast Episode ID', 'cmb2' ),
+        'desc' => __( 'field description (optional)', 'cmb2' ),
+        'id'   => $prefix . 'episode_id',
         'type' => 'text',
         // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
         // 'repeatable' => true,
@@ -63,23 +62,7 @@ function one_register_podcast_metabox() {
         // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
     ) );
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'iframe URL', 'cmb2' ),
-        'desc' => __( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'iframe_url',
-        'type' => 'text_url',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Podcast Episode ID', 'cmb2' ),
-        'desc' => __( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'episode_id',
-        'type' => 'text',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
     $cmb_demo->add_field( array(
         'name' => __( 'Podcast video url', 'cmb2' ),
         'desc' => __( 'field description (optional)', 'cmb2' ),
@@ -89,14 +72,6 @@ function one_register_podcast_metabox() {
         // 'repeatable' => true,
     ) );
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Direct Download URL', 'cmb2' ),
-        'desc' => __( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'direct_download_url',
-        'type' => 'text_url',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
     $cmb_demo->add_field( array(
         'name'    => __( 'Podcast Notes Content', 'cmb2' ),
         'desc'    => __( 'This is where you enter the Podcast Notes provided by Travis.', 'cmb2' ),
