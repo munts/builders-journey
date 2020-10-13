@@ -78,9 +78,6 @@
                                     <?php } 
                                     if (!empty ($images)) { ?>
                                         <a class="moreLink" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/camera-sm.png" style="width:65%;"></a>
-                                    <?php }
-                                    else{ ?>
-                                        <a class="moreLink" href="<?= $podUrl; ?>">Read More</a>
                                     <?php } ?>
                                 </div>
                             </div>
