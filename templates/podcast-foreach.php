@@ -69,14 +69,15 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
                                     <div class="podcastExcerpt"><?= $podDescriptionOutput; ?></div>
-                                    <?php if (!empty ($images)) { ?>
-                                        <a class="moreLink" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/camera-sm.png" style="width:65%;"></a>
+                                    <?php 
+                                    if (!empty ($podUrl)) { ?>
+                                        <a class="moreLink" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/mic_headphones.png" style="width:50%;"></a>
                                     <?php }
                                     if (!empty ($vidUrl)) { ?>
                                         <a class="moreLink" href="<?= $vidUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/movie.png" style="width:50%;"></a>
                                     <?php } 
-                                    if (!empty ($podUrl)) { ?>
-                                        <a class="moreLink" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/mic_headphones.png" style="width:50%;"></a>
+                                    if (!empty ($images)) { ?>
+                                        <a class="moreLink" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/camera-sm.png" style="width:65%;"></a>
                                     <?php }
                                     else{ ?>
                                         <a class="moreLink" href="<?= $podUrl; ?>">Read More</a>
