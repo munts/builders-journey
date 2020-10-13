@@ -69,10 +69,18 @@ add_action('wp_enqueue_scripts', 'oneConfluence_styles');
 function oneConfluence_scripts() {
     wp_enqueue_script('vendor', get_template_directory_uri() . '/js/vendor/vendor.min.js', array('jquery'), '', true);
     wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js', array('jquery', 'vendor'), '', true);
+    wp_register_script( 'loadmorejs', get_template_directory_uri() . '/js/loadmore.js', array('jquery'), true );
      /** Easing javascript file **/
+    wp_enqueue_script( 'loadmorejs' );
+    wp_localize_script( 'loadmorejs', 'ajax_posts', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'noposts' => __('No older posts found', 'one-confluence'),
+    ));	
 }
 
 add_action('wp_enqueue_scripts', 'oneConfluence_scripts');
+ 
+
 
 function Get_most_recent_permalink(){
     global $post;
@@ -409,6 +417,105 @@ function oneConfluence_trim_excerpt($length) {
     }
     return $text;
 }
+
+function more_post_ajax(){
+
+    $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 8;
+    $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
+
+    header("Content-Type: text/html");
+        //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+        $podResults = new WP_Query(array(
+            'suppress_filters' => true,
+            'post_type' => 'podcasts',
+            'posts_per_page' => $ppp,
+            'paged'          => $page,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_status' => 'publish',
+        ));
+        $podPosts = $podResults->get_posts();
+
+        //loop through results set
+        foreach ($podPosts as $podPost) {
+            /*
+            Pull category for each unique post using the ID
+            */
+            $terms = get_the_terms( $podPost->ID, 'podcast_categories' );
+            if ( $terms && ! is_wp_error( $terms ) ) :
+                $links = array();
+                foreach ( $terms as $term ) {
+
+                    $links[] = $term->name;
+
+                }
+                $tax_links = join( " ", str_replace(' ', '-', $links));
+                $tax = strtolower($tax_links);
+            else :
+                $tax = '';
+            endif;
+            $images = get_field('gallery', $podPost->ID);
+            $podTitle = get_the_title($podPost);
+            $podUrl = get_permalink($podPost);
+            $podContent = get_the_content($podPost);
+            $podExcerpt = get_the_excerpt($podPost->ID);
+            $featured_img_url = get_the_post_thumbnail_url($podPost->ID,'thumb');
+            $podImageUrl = the_post_thumbnail('thumbnail');
+            $podImageUrlThumb = get_post_meta( $podPost->ID, '_one_podcast_pod_thumbnail', true, 'thumb' );
+            $pod_thumbnail = get_post_meta($podPost->ID, '_one_podcast_pod_thumbnail', true);
+            $image = wp_get_attachment_image( get_post_meta($podPost->ID, '_one_podcast_pod_thumbnail_id', 1 ), 'thumb' );
+            $pod_iframeUrl = get_post_meta($podPost->ID, '_one_podcast_iframe_url', true);
+            $podId = get_post_meta($podPost->ID, '_one_podcast_episode_id', true);
+            $vidUrl = get_post_meta($podPost->ID, '_one_podcast_video_url', true);
+            $podLongDescription = get_post_meta($podPost->ID, '_one_podcast_description', true);
+            $podShortDescription = get_post_meta($podPost->ID, '_one_podcast_short_description', true);
+            $trimmedPodShortDescription = substr($podShortDescription, 0, 200);
+            $more = '...';
+            $podDescriptionOutput = $trimmedPodShortDescription . $more;
+            ?>
+
+            <div class="podcast">
+                <article class="pod-entry-1">
+                    <div class="container-fluid">
+                        <div class="row podRow">
+                            <div class="col-xs-12 col-sm-5">
+                                <h2 class="podTitle"><a href="<?= $podUrl; ?>"><?= $podTitle; ?></a></h2>
+                                <?php
+                                echo '<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/'. $podId . '/height/90/theme/custom/thumbnail/yes/preload/no/direction/backward/render-playlist/no/custom-color/145da1/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>';
+                                ?>
+                            </div>
+                            <div class="col-xs-12 col-sm-1" style="padding:0;">
+                                <img src="<?= $pod_thumbnail; ?>" class="img-responsive" style="width:100px;">
+
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="podcastExcerpt"><?= $podDescriptionOutput; ?></div>
+                                <?php if (!empty ($images)) { ?>
+                                    <a class="moreLink" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/camera-sm.png" style="width:65%;"></a>
+                                <?php }
+                                if (!empty ($vidUrl)) { ?>
+                                    <a class="moreLink" href="<?= $vidUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/movie.png" style="width:50%;"></a>
+                                <?php } 
+                                if (!empty ($podUrl)) { ?>
+                                    <a class="moreLink" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/mic_headphones.png" style="width:50%;"></a>
+                                <?php }
+                                else{ ?>
+                                    <a class="moreLink" href="<?= $podUrl; ?>">Read More</a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                </article>
+            </div>
+
+        <?php } // END foreach 
+    wp_reset_postdata();
+    die($out);
+}
+
+add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
+add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
 
 function disable_emojicons_tinymce( $plugins ) {
     if ( is_array( $plugins ) ) {

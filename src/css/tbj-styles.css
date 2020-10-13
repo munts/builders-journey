@@ -189,7 +189,7 @@ ul#one_menu2 { margin: 5px 0 0 50px;}
 .navbar-default .navbar-nav>.current_page_item>a,
 .navbar-default .navbar-nav>.current>a:hover,
 .navbar-default .navbar-nav>.current>a:focus {
-    background-color: #fff;
+    background-color: transparent;
     /*border-bottom: 2px solid #e6343f;*/
 }
 .navbar-default .navbar-nav>li>a {
@@ -1297,4 +1297,8 @@ h3.widget-title {color: #fff;}
 
 .card-body {
     padding: 10px;
+}
+
+.remove {
+    display: none;
 }
