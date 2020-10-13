@@ -69,10 +69,10 @@ add_action('wp_enqueue_scripts', 'oneConfluence_styles');
 function oneConfluence_scripts() {
     wp_enqueue_script('vendor', get_template_directory_uri() . '/js/vendor/vendor.min.js', array('jquery'), '', true);
     wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js', array('jquery', 'vendor'), '', true);
-    wp_register_script( 'loadmorejs', get_template_directory_uri() . '/js/loadmore.js', array('jquery'), true );
+    //wp_register_script( 'loadmorejs', get_template_directory_uri() . '/js/loadmore.js', array('jquery'), true );
      /** Easing javascript file **/
-    wp_enqueue_script( 'loadmorejs' );
-    wp_localize_script( 'loadmorejs', 'ajax_posts', array(
+    //wp_enqueue_script( 'loadmorejs' );
+    wp_localize_script( 'custom', 'ajax_posts', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
         'noposts' => __('No older posts found', 'one-confluence'),
     ));	
@@ -421,15 +421,15 @@ function oneConfluence_trim_excerpt($length) {
 function more_post_ajax(){
 
     $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 8;
-    //$page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
+    $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
 
     header("Content-Type: text/html");
-        $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+        //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         $podResults = new WP_Query(array(
             'suppress_filters' => true,
             'post_type' => 'podcasts',
             'posts_per_page' => $ppp,
-            'paged'          => $paged,
+            'paged'          => $page,
             'orderby' => 'date',
             'order' => 'DESC',
             'post_status' => 'publish',
