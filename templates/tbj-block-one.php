@@ -65,8 +65,6 @@ $fontStyle = one_get_option('font-style');
 
     <div id="latest-cta" class="row">
         <div class="col-xs-12" style="text-align:center;">
-            <!-- <div style="display:inline-block;"><a class="btn btn-primary" href="#podcasts">Listen Here<br><img src="/wp-content/themes/one-confluence/assets/icons8-chevron-down-24.png"></a></div> -->
-
         </div>
     </div>
 </div>

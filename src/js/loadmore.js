@@ -1,4 +1,7 @@
-
+/*!
+ * One Confluence - WordPress Theme
+ * Loadmore script
+ */
 ;(function($, window, undefined){
 var ppp = 8; // Post per page
 var pageNumber = 1;
@@ -18,8 +21,8 @@ function load_posts(){
                 $("#podContent").append($data);
                 $("#more_posts").attr("disabled",false);
             } else{
-                //$("#more_posts").attr("disabled",true);
-                $("#more_posts").addClass("remove");
+                $("#more_posts").attr("disabled",true);
+                // $("#more_posts").addClass("remove");
             }
         },
         error : function(jqXHR, textStatus, errorThrown) {

@@ -421,15 +421,15 @@ function oneConfluence_trim_excerpt($length) {
 function more_post_ajax(){
 
     $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 8;
-    $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
+    //$page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
 
     header("Content-Type: text/html");
-        //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+        $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         $podResults = new WP_Query(array(
             'suppress_filters' => true,
             'post_type' => 'podcasts',
             'posts_per_page' => $ppp,
-            'paged'          => $page,
+            'paged'          => $paged,
             'orderby' => 'date',
             'order' => 'DESC',
             'post_status' => 'publish',

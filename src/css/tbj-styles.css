@@ -616,7 +616,7 @@ img.desaturate-no {padding:10px 0 10px 40px;margin-top:30px;}
 
 .photos_gallery {float: left;margin-bottom: 40px;}
 .photos_gallery ul {margin: 5px 0px 0px -6px;padding: 0px;}
-.photos_gallery ul li {display: inline-block;width: 50%;float: left;padding: 2px 0px 0px 2px;max-height: 160px;min-height: 160px;overflow: hidden;}
+.photos_gallery ul li {width: 50%;float: left;padding: 2px 0px 0px 2px;max-height: 160px;min-height: 160px;overflow: hidden;}
 .photos_gallery ul li a {display: inline-block;width:100%;height: 100%;}
 .photos_gallery ul li a img {width:100%;height: 100%;}
 .photos_gallery li:nth-child(1) {height: 320px;max-height: 320px;overflow: hidden;width: 50%;}

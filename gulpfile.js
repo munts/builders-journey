@@ -95,7 +95,10 @@ function stylesMin() {
 function scripts() {
     return gulp
         //.src([paths.scripts.src + "custom.js", paths.scripts.src + "vendor/*.js"])
-        .src([paths.scripts.src + "custom.js"])
+        .src(
+            //[paths.scripts.src + "custom.js"],
+            [paths.scripts.src + "loadmore.js"]
+            )
         .pipe(sourcemaps.init())
         .on("error", notify.onError(function(e){
             return "error: " + e.message;
@@ -159,11 +162,12 @@ exports.fonts = fonts;
 exports.images = images;
 
 //var buildDev = gulp.parallel(styles);
+var buildDev = gulp.parallel(scripts);
 //var buildDev = gulp.parallel(styles, stylesMin);
 //var buildDev = gulp.parallel(styles, stylesMin, fonts);
 //var buildDev = gulp.parallel(styles, stylesMin, fonts, scripts);
 //var buildDev = gulp.parallel(styles, stylesMin, fonts, scripts, images);
-var buildDev = gulp.parallel(styles, stylesMin, scripts, scriptsMin, fonts, images);
+//var buildDev = gulp.parallel(styles, stylesMin, scripts, scriptsMin, fonts, images);
 
 
 gulp.task("buildDev", buildDev);
