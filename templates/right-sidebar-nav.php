@@ -12,7 +12,7 @@
 <div class="sidebar-nav"><a href="/wildcard-wednesdays/">Wildcard Wednesdays</a></div>
 <div class="sidebar-nav"><a href="/rescue-run/">Rescue Run (un-cut)</a></div>
 <div class="card tbj-card" style="margin-top:30px;">
-    <img class="card-img-top img-responsive" src="http://tbj.flywheelsites.com/wp-content/uploads/2020/09/PlumbKendall_PodcastArt-490x480px_April2019.jpg" alt="Podcast Logo">
+    <img class="card-img-top img-responsive" src="http://tbj.flywheelsites.com/wp-content/uploads/2020/09/PlumbKendall_PodcastArt-490x480px_April2019.jpg" alt="Podcast Logo" style="width:80%; margin:0 auto;">
     <div class="card-body">
         <h5 class="card-title">Subscribe!!!</h5>
         <p class="card-text">Don't Miss Out!  Get email notifications as new episodes are released.</p>
