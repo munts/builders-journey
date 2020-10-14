@@ -888,6 +888,7 @@ and (min-width : 321px) {
         margin-left: 0px;
 
     }
+    .tbj-card {display: none;}
 }
 
 /* Smartphones (portrait) ----------- */
@@ -998,6 +999,10 @@ and (orientation : portrait) {
 }
 
 @media (min-width: 768px) {
+    .tbj-card {display: block;width: 15rem;}
+    #scrolly-side .scrolly article {
+        max-width: 40rem;
+      }
     .navbar-nav>li {
         display: inline-block !important;
         float: none;
@@ -1006,13 +1011,15 @@ and (orientation : portrait) {
 
 
 @media (min-width: 992px) {
+    .tbj-card {width: 18rem;}
     #subscribe-cta {position: absolute;left: 62%;bottom: 175px;}
     #latest-cta {position: absolute;left: 44%;bottom: 50px;}
     #purpose-bottom {margin-left: -15px;margin-right: -15px;color: #000;padding-bottom:20px;height:700px;}
     .page-template-blog-post-template #purpose-bottom{margin-left: -15px;margin-right: -15px;color: #000;padding-bottom:20px;height:700px;margin-bottom:50px;}
     .bottom-info {margin-left:-15px; margin-right:-15px;margin-top:220px;}
     .stick {
-        position: fixed;
+        position: -webkit-sticky;
+        position: sticky;
         top: 100px;
         z-index: 1000;
     }
@@ -1274,7 +1281,7 @@ h3.widget-title {color: #fff;}
 .card {
     padding-left:auto;
     padding-right:auto;
-    min-height:500px;
+    /* min-height:500px; */
     margin-top:15px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     -webkit-transition: .25s box-shadow;
@@ -1301,4 +1308,41 @@ h3.widget-title {color: #fff;}
 
 .remove {
     display: none;
+}
+
+#scrolly-side .scrolly {
+display: -webkit-box;
+display: flex;
+max-width: 70rem;
+margin: 3rem auto;
+padding: 1rem;
+}
+#scrolly-side .scrolly > * {
+-webkit-box-flex: 1;
+        flex: 1;
+}
+#scrolly-side .scrolly article {
+padding-right: 0.5rem;
+width: 48rem;
+max-width: 48rem;
+}
+
+#scrolly-side .scrolly figure.sticky {
+position: -webkit-sticky;
+position: sticky;
+width: 100%;
+height: 70vh;
+margin: 0;
+top: 2.5vh;
+left: 0;
+}
+#scrolly-side .scrolly figure.sticky .bar-outer {
+position: absolute;
+top: 20%;
+left: 5%;
+-webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+width: 90%;
+height: 4rem;
+background-color: #fff;
 }

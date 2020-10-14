@@ -89,4 +89,4 @@
             <?php } // END foreach ?>
 </div>
 
-<div id="more_posts" style="padding: 30px 0; text-align: center;"><div class="btn btn-primary">Load More</div></div>
+<div id="more_posts" style="margin:60px auto;padding: 30px 0; text-align: center;"><div class="btn btn-primary">Load More</div></div>

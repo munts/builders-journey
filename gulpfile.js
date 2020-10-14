@@ -168,6 +168,7 @@ exports.images = images;
 //var buildDev = gulp.parallel(styles, stylesMin, fonts, scripts);
 //var buildDev = gulp.parallel(styles, stylesMin, fonts, scripts, images);
 var buildDev = gulp.parallel(styles, stylesMin, scripts, scriptsMin, fonts, images);
+//var buildDev = gulp.parallel(styles, stylesMin, scripts, scriptsMin);
 
 
 gulp.task("buildDev", buildDev);

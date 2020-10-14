@@ -13,7 +13,7 @@ $team_bg = get_post_meta($post->ID, '_one_front_team_background_image', true);
 ?>
 
 <section id="gallery" class="row">
-    <div class="col-xs-12 team_div" style="background-image: url('<?= $team_bg; ?>');">
+    <div id="bg-container" class="col-xs-12 team_div" style="background-image: url('<?= $team_bg; ?>');">
     <!-- Slider main container -->
 
         <div class="row">
