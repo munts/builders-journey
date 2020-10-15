@@ -537,40 +537,11 @@ function all_post_ajax(){
 
         //loop through results set
         foreach ($podPosts as $podPost) {
-            /*
-            Pull category for each unique post using the ID
-            */
-            // $terms = get_the_terms( $podPost->ID, 'podcast_categories' );
-            // if ( $terms && ! is_wp_error( $terms ) ) :
-            //     $links = array();
-            //     foreach ( $terms as $term ) {
-
-            //         $links[] = $term->name;
-
-            //     }
-            //     $tax_links = join( " ", str_replace(' ', '-', $links));
-            //     $tax = strtolower($tax_links);
-            // else :
-            //     $tax = '';
-            // endif;
             $images = get_field('gallery', $podPost->ID);
             $podTitle = get_the_title($podPost);
             $podUrl = get_permalink($podPost);
-            //$podContent = get_the_content($podPost);
-            //$podExcerpt = get_the_excerpt($podPost->ID);
-            //$featured_img_url = get_the_post_thumbnail_url($podPost->ID,'thumb');
-            //$podImageUrl = the_post_thumbnail('thumbnail');
-            //$podImageUrlThumb = get_post_meta( $podPost->ID, '_one_podcast_pod_thumbnail', true, 'thumb' );
-            //$pod_thumbnail = get_post_meta($podPost->ID, '_one_podcast_pod_thumbnail', true);
-            //$image = wp_get_attachment_image( get_post_meta($podPost->ID, '_one_podcast_pod_thumbnail_id', 1 ), 'thumb' );
-            //$pod_iframeUrl = get_post_meta($podPost->ID, '_one_podcast_iframe_url', true);
             $podId = get_post_meta($podPost->ID, '_one_podcast_episode_id', true);
             $vidUrl = get_post_meta($podPost->ID, '_one_podcast_video_url', true);
-            //$podLongDescription = get_post_meta($podPost->ID, '_one_podcast_description', true);
-            //$podShortDescription = get_post_meta($podPost->ID, '_one_podcast_short_description', true);
-            //$trimmedPodShortDescription = substr($podShortDescription, 0, 200);
-            //$more = '...';
-            //$podDescriptionOutput = $trimmedPodShortDescription . $more;
             ?>
 
             <div class="podcast">

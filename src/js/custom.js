@@ -91,32 +91,31 @@
     var app = -1; // all podcast posts per page
     var pageNumber = 1;
 
+function load_posts(){
+    pageNumber++;
+    var str = '&pageNumber=' + pageNumber + '&ppp=' + ppp + '&action=more_post_ajax';
+    $.ajax({
+        type: "POST",
+        dataType: "html",
+        url: ajax_posts.ajaxurl,
+        data: str,
+        success: function(data){
+            var $data = $(data);
+            if($data.length){
+                $("#podContent").append($data);
+                $("#more_posts").attr("disabled",false);
+            } else{
+                $("#more_posts").attr("disabled",true);
+                // $("#more_posts").addClass("remove");
+            }
+        },
+        error : function(jqXHR, textStatus, errorThrown) {
+            $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+        }
 
-// function load_posts(){
-//     pageNumber++;
-//     var str = '&pageNumber=' + pageNumber + '&ppp=' + ppp + '&action=more_post_ajax';
-//     $.ajax({
-//         type: "POST",
-//         dataType: "html",
-//         url: ajax_posts.ajaxurl,
-//         data: str,
-//         success: function(data){
-//             var $data = $(data);
-//             if($data.length){
-//                 $("#podContent").append($data);
-//                 $("#more_posts").attr("disabled",false);
-//             } else{
-//                 $("#more_posts").attr("disabled",true);
-//                 // $("#more_posts").addClass("remove");
-//             }
-//         },
-//         error : function(jqXHR, textStatus, errorThrown) {
-//             $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
-//         }
-
-//     });
-//     return false;
-// }
+    });
+    return false;
+}
 
 function load_all_posts(){
     pageNumber++;
@@ -129,12 +128,10 @@ function load_all_posts(){
         success: function(data){
             var $data = $(data);
             if($data.length){
-                //$("#podContent").addClass("remove");
                 $("#podContentTitles").append($data);
-                //$("#more_posts").attr("disabled",false);
+                $("#all_posts").attr("disabled",false);
             } else{
-                //$("#more_posts").attr("disabled",true);
-                // $("#more_posts").addClass("remove");
+                $("#all_posts").attr("disabled",true);
             }
         },
         error : function(jqXHR, textStatus, errorThrown) {
@@ -145,31 +142,18 @@ function load_all_posts(){
     return false;
 }
 
-    // $("#more_posts").on("click",function(){ // When btn is pressed.
-    //     $("#more_posts").attr("disabled",true); // Disable the button, temp.
-    //     load_posts();
-    //     $(this).insertAfter('#podContent'); // Move the 'Load More' button to the end of the the newly added posts.
-    // });
+    $("#more_posts").on("click",function(){ // When btn is pressed.
+        $("#more_posts").attr("disabled",true); // Disable the button, temp.
+        load_posts();
+        $(this).insertAfter('#podContent'); // Move the 'Load More' button to the end of the the newly added posts.
+    });
 
     $("#all_posts").on("click",function(){ // When btn is pressed.
-        //$("#all_posts").attr("disabled",true); // Disable the button, temp.
+        $("#all_posts").attr("disabled",true); // Disable the button, temp.
         load_all_posts();
         $('#podContent').addClass('remove');
         $("#more_posts").addClass("remove");
-        //$(this).insertAfter('#podContent'); // Move the 'Load More' button to the end of the the newly added posts.
     });
-
-   
-        // var $loadMore = $('#all_posts'),
-        //   $podContent = $("#podContent");
-      
-        // $loadMore.on("click", function() {
-        //   if ($(this).is("#podContent")) {
-        //   var $podContent = $(this);
-        //     $(this).remove();
-        //     $loadMore.remove();
-        //   };
-        // })
 
 }(jQuery, window));
 
