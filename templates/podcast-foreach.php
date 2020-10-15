@@ -1,4 +1,4 @@
-<div id="podContent">
+<div id="podContent" class="one two">
 
 <?php
             //use wp_query to get cpts and order by post order attributes
@@ -88,5 +88,6 @@
 
             <?php } // END foreach ?>
 </div>
+<div id="podContentTitles"></div>
 
 <div id="more_posts" style="margin:60px auto;padding: 30px 0; text-align: center;"><div class="btn btn-primary">Load More</div></div>

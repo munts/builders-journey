@@ -1352,3 +1352,15 @@ width: 90%;
 height: 4rem;
 background-color: #fff;
 }
+
+#all_posts:hover {cursor: pointer;}
+
+ul.post-icons {
+    display: flex;
+    list-style: none;
+}
+
+ul.post-icons li {
+    flex-grow: 1;
+}
+

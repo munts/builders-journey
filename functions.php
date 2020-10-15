@@ -517,6 +517,95 @@ function more_post_ajax(){
 add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
 add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
 
+function all_post_ajax(){
+
+    $app = (isset($_POST["app"])) ? $_POST["app"] : -1;
+    $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
+
+    header("Content-Type: text/html");
+        //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+        $podResults = new WP_Query(array(
+            'suppress_filters' => true,
+            'post_type' => 'podcasts',
+            'posts_per_page' => $app,
+            'paged'          => $page,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_status' => 'publish',
+        ));
+        $podPosts = $podResults->get_posts();
+
+        //loop through results set
+        foreach ($podPosts as $podPost) {
+            /*
+            Pull category for each unique post using the ID
+            */
+            // $terms = get_the_terms( $podPost->ID, 'podcast_categories' );
+            // if ( $terms && ! is_wp_error( $terms ) ) :
+            //     $links = array();
+            //     foreach ( $terms as $term ) {
+
+            //         $links[] = $term->name;
+
+            //     }
+            //     $tax_links = join( " ", str_replace(' ', '-', $links));
+            //     $tax = strtolower($tax_links);
+            // else :
+            //     $tax = '';
+            // endif;
+            $images = get_field('gallery', $podPost->ID);
+            $podTitle = get_the_title($podPost);
+            $podUrl = get_permalink($podPost);
+            //$podContent = get_the_content($podPost);
+            //$podExcerpt = get_the_excerpt($podPost->ID);
+            //$featured_img_url = get_the_post_thumbnail_url($podPost->ID,'thumb');
+            //$podImageUrl = the_post_thumbnail('thumbnail');
+            //$podImageUrlThumb = get_post_meta( $podPost->ID, '_one_podcast_pod_thumbnail', true, 'thumb' );
+            //$pod_thumbnail = get_post_meta($podPost->ID, '_one_podcast_pod_thumbnail', true);
+            //$image = wp_get_attachment_image( get_post_meta($podPost->ID, '_one_podcast_pod_thumbnail_id', 1 ), 'thumb' );
+            //$pod_iframeUrl = get_post_meta($podPost->ID, '_one_podcast_iframe_url', true);
+            $podId = get_post_meta($podPost->ID, '_one_podcast_episode_id', true);
+            $vidUrl = get_post_meta($podPost->ID, '_one_podcast_video_url', true);
+            //$podLongDescription = get_post_meta($podPost->ID, '_one_podcast_description', true);
+            //$podShortDescription = get_post_meta($podPost->ID, '_one_podcast_short_description', true);
+            //$trimmedPodShortDescription = substr($podShortDescription, 0, 200);
+            //$more = '...';
+            //$podDescriptionOutput = $trimmedPodShortDescription . $more;
+            ?>
+
+            <div class="podcast">
+                <article class="pod-entry-1">
+                    <div class="container-fluid">
+                        <div class="row podRow">
+                            <div class="col-xs-12 col-sm-8"> 
+                                <h2 class="podTitle"><a href="<?= $podUrl; ?>"><?= $podTitle; ?></a></h2>
+                            </div>
+                            <div class="hidden-xs col-sm-4">
+                                <ul class="post-icons">
+                                    <?php if (!empty ($images)) { ?>
+                                        <li><img src="/wp-content/themes/one-confluence/assets/camera-xs.png"></li>
+                                    <?php }
+                                    if (!empty ($vidUrl)) { ?>
+                                        <li><img src="/wp-content/themes/one-confluence/assets/movie-xs.png"></li>
+                                    <?php } 
+                                    if (!empty ($podUrl)) { ?>
+                                        <li><img src="/wp-content/themes/one-confluence/assets/mic_headphones-xs.png"></li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        <?php } // END foreach 
+    wp_reset_postdata();
+    die($out);
+}
+
+add_action('wp_ajax_nopriv_all_post_ajax', 'all_post_ajax');
+add_action('wp_ajax_all_post_ajax', 'all_post_ajax');
+
 function disable_emojicons_tinymce( $plugins ) {
     if ( is_array( $plugins ) ) {
         return array_diff( $plugins, array( 'wpemoji' ) );
