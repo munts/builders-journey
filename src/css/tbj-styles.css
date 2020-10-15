@@ -44,6 +44,10 @@ a (hover):              # ( green)
 /***  Remember to update absolute paths of background images and move them into the project vs. wp.  ***/
 
 /*-------------------------------------------------------------------*/
+* {
+    box-sizing: border-box;
+ }
+ 
 html,body {
     width:100%;
     height:100%;
@@ -154,7 +158,7 @@ input, select {vertical-align:middle;}
     z-index: 10000;
 }
 
-.header .navbar {min-height: 100px !important; margin-bottom:0;}
+.header .navbar {min-height: 100px !important; margin-bottom: 0; width: 100%;}
 
 .menu {background-image: url('../assets/navbar_grey_just_pb.png');
     background-size: 75px;
@@ -164,7 +168,7 @@ input, select {vertical-align:middle;}
 }
 
 
-ul#one_menu { margin: 25px 0 0 85px;padding:0 10px;}
+ul#one_menu { display: flex;margin: 25px 0 0 85px;padding:0 10px; width: 100%;}
 ul#one_menu { background-image: url('../assets/navbar_grey_line_sm.png');
     background-repeat: repeat-x;
     background-size: 6px;}
@@ -1004,8 +1008,10 @@ and (orientation : portrait) {
         max-width: 40rem;
       }
     .navbar-nav>li {
-        display: inline-block !important;
+        /* display: inline-block !important; */
+        flex-grow: 1;
         float: none;
+        white-space: nowrap;
     }
 }
 
