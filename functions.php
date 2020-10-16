@@ -489,20 +489,20 @@ function more_post_ajax(){
 
                             </div>
                             <div class="col-xs-12 col-sm-6">
-                                <div class="podcastExcerpt"><?= $podDescriptionOutput; ?></div>
-                                <?php if (!empty ($images)) { ?>
-                                    <a class="moreLink" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/camera-sm.png" style="width:65%;"></a>
-                                <?php }
-                                if (!empty ($vidUrl)) { ?>
-                                    <a class="moreLink" href="<?= $vidUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/movie.png" style="width:50%;"></a>
-                                <?php } 
-                                if (!empty ($podUrl)) { ?>
-                                    <a class="moreLink" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/mic_headphones.png" style="width:50%;"></a>
-                                <?php }
-                                else{ ?>
-                                    <a class="moreLink" href="<?= $podUrl; ?>">Read More</a>
-                                <?php } ?>
-                            </div>
+                                    <div class="podcastExcerpt"><?= $podDescriptionOutput; ?></div>
+                                    <div id="podDetails">
+                                    <?php 
+                                    if (!empty ($vidUrl)) { ?>
+                                        <a class="moreIcon" href="<?= $vidUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/movie-xs.png" style=""></a>
+                                    <?php }
+                                    if (!empty ($images)) { ?>
+                                        <a class="moreIcon" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/camera-xs.png" style=""></a>
+                                    <?php }
+                                    if (!empty ($podUrl)) { ?>
+                                        <a class="moreIcon" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/mic_headphones-xs.png" style=""></a>
+                                    <?php } ?>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                     <div>
@@ -553,12 +553,12 @@ function all_post_ajax(){
                             </div>
                             <div class="hidden-xs col-sm-4">
                                 <ul class="post-icons">
-                                    <?php if (!empty ($images)) { ?>
-                                        <li><img src="/wp-content/themes/one-confluence/assets/camera-xs.png"></li>
-                                    <?php }
-                                    if (!empty ($vidUrl)) { ?>
+                                    <?php if (!empty ($vidUrl)) { ?>
                                         <li><img src="/wp-content/themes/one-confluence/assets/movie-xs.png"></li>
                                     <?php } 
+                                    if (!empty ($images)) { ?>
+                                        <li><img src="/wp-content/themes/one-confluence/assets/camera-xs.png"></li>
+                                    <?php }
                                     if (!empty ($podUrl)) { ?>
                                         <li><img src="/wp-content/themes/one-confluence/assets/mic_headphones-xs.png"></li>
                                     <?php } ?>

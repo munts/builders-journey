@@ -66,7 +66,7 @@
                                 <div class="col-xs-12 col-sm-1" style="padding:0;">
                                     <img src="<?= $pod_thumbnail; ?>" class="img-responsive" style="width:100px;">
                                 </div>
-                                <div id="" class="col-xs-12 col-sm-6">
+                                <div class="col-xs-12 col-sm-6">
                                     <div class="podcastExcerpt"><?= $podDescriptionOutput; ?></div>
                                     <div id="podDetails">
                                     <?php 
