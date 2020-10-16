@@ -1218,10 +1218,20 @@ a.moreLink {
     color: #145da1;
     font-size:14px;
     font-weight:bold;
-    float:right;
     line-height:22px;
     padding-bottom:10px;
 }
+
+#podDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+a.moreIcon {
+    padding:5px;
+}
+
 .podRow {
     border-bottom: 1px solid #cccccc;
 }
@@ -1315,6 +1325,9 @@ h3.widget-title {color: #fff;}
 .remove {
     display: none;
 }
+.show {
+    display: block;
+}
 
 #scrolly-side .scrolly {
 display: -webkit-box;
@@ -1354,6 +1367,7 @@ background-color: #fff;
 }
 
 #all_posts:hover {cursor: pointer;}
+#new_more_posts:hover {cursor: pointer;}
 
 ul.post-icons {
     display: flex;
@@ -1363,4 +1377,3 @@ ul.post-icons {
 ul.post-icons li {
     flex-grow: 1;
 }
-

@@ -117,6 +117,34 @@ function load_posts(){
     return false;
 }
 
+function re_load_posts(){
+    pageNumber++;
+    var str = '&pageNumber=' + pageNumber + '&ppp=' + ppp + '&action=more_post_ajax';
+    $.ajax({
+        type: "POST",
+        dataType: "html",
+        url: ajax_posts.ajaxurl,
+        data: str,
+        success: function(data){
+            var $data = $(data);
+            if($data.length){
+                $("#podContentTitles").remove();
+                $("#podContent").removeClass("remove").addClass("show");
+                $("#podContent").append($data);
+                $("#more_posts").attr("disabled",false);
+            } else{
+                $("#more_posts").attr("disabled",true);
+                // $("#more_posts").addClass("remove");
+            }
+        },
+        error : function(jqXHR, textStatus, errorThrown) {
+            $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+        }
+
+    });
+    return false;
+}
+
 function load_all_posts(){
     pageNumber++;
     var str = '&pageNumber=' + pageNumber + '&ppp=' + app + '&action=all_post_ajax';
@@ -153,6 +181,15 @@ function load_all_posts(){
         load_all_posts();
         $('#podContent').addClass('remove');
         $("#more_posts").addClass("remove");
+        $("#all_posts").addClass("remove");
+        $("#new_more_posts").removeClass("remove");
+        $("#new_more_posts").addClass("show");
+    });
+
+    $("#new_more_posts").on("click",function(){ // When btn is pressed.
+        $("#more_posts").attr("disabled",true); // Disable the button, temp.
+        re_load_posts();
+        $(this).insertAfter('#podContent'); // Move the 'Load More' button to the end of the the newly added posts.
     });
 
 }(jQuery, window));

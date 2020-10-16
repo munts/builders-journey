@@ -65,20 +65,21 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-1" style="padding:0;">
                                     <img src="<?= $pod_thumbnail; ?>" class="img-responsive" style="width:100px;">
-
                                 </div>
-                                <div class="col-xs-12 col-sm-6">
+                                <div id="" class="col-xs-12 col-sm-6">
                                     <div class="podcastExcerpt"><?= $podDescriptionOutput; ?></div>
+                                    <div id="podDetails">
                                     <?php 
-                                    if (!empty ($podUrl)) { ?>
-                                        <a class="moreLink" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/mic_headphones.png" style="width:50%;"></a>
-                                    <?php }
                                     if (!empty ($vidUrl)) { ?>
-                                        <a class="moreLink" href="<?= $vidUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/movie.png" style="width:50%;"></a>
-                                    <?php } 
+                                        <a class="moreIcon" href="<?= $vidUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/movie-xs.png" style=""></a>
+                                    <?php }
                                     if (!empty ($images)) { ?>
-                                        <a class="moreLink" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/camera-sm.png" style="width:65%;"></a>
+                                        <a class="moreIcon" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/camera-xs.png" style=""></a>
+                                    <?php }
+                                    if (!empty ($podUrl)) { ?>
+                                        <a class="moreIcon" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/mic_headphones-xs.png" style=""></a>
                                     <?php } ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>

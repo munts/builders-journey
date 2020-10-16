@@ -9,6 +9,7 @@
 
 <div class="sidebar-nav"><a href="/podcasts/">Archived Episodes</a></div>
 <div id="all_posts" class="sidebar-nav">Search by Title</div>
+<div id="new_more_posts" class="sidebar-nav remove">Show Latest Episodes</div>
 <!-- <div class="sidebar-nav"><a href="/trade-partner-tuesdays/">Trade Partner Tuesdays</a></div>
 <div class="sidebar-nav"><a href="/wildcard-wednesdays/">Wildcard Wednesdays</a></div>
 <div class="sidebar-nav"><a href="/rescue-run/">Rescue Run (un-cut)</a></div> -->
