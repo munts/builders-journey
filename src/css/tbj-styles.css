@@ -1033,6 +1033,9 @@ and (orientation : portrait) {
         position: relative;
         z-index: 1000;
     }
+    #podContentTitles, #podContent {
+        min-width: 710px;
+    }
 }
 
 @media only screen
@@ -1325,7 +1328,7 @@ h3.widget-title {color: #fff;}
 .remove {
     display: none;
 }
-.show {
+.show_button {
     display: block;
 }
 
@@ -1367,7 +1370,8 @@ background-color: #fff;
 }
 
 #all_posts:hover {cursor: pointer;}
-#new_more_posts:hover {cursor: pointer;}
+#show_all_posts:hover {cursor: pointer;}
+#show_latest_episodes:hover {cursor: pointer;}
 
 ul.post-icons {
     display: flex;

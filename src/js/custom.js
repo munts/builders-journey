@@ -117,34 +117,35 @@ function load_posts(){
     return false;
 }
 
-function re_load_posts(){
-    pageNumber++;
-    var str = '&pageNumber=' + pageNumber + '&ppp=' + ppp + '&action=more_post_ajax';
-    $.ajax({
-        type: "POST",
-        dataType: "html",
-        url: ajax_posts.ajaxurl,
-        data: str,
-        success: function(data){
-            var $data = $(data);
-            if($data.length){
-                $("#podContentTitles").remove();
-                $("#podContent").removeClass("remove").addClass("show");
-                $("#podContent").append($data);
-                $("#more_posts").attr("disabled",false);
-            } else{
-                $("#more_posts").attr("disabled",true);
-                // $("#more_posts").addClass("remove");
-            }
-        },
-        error : function(jqXHR, textStatus, errorThrown) {
-            $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
-        }
+// function re_load_posts(){
+//     pageNumber++;
+//     var str = '&pageNumber=' + pageNumber + '&ppp=' + ppp + '&action=more_post_ajax';
+//     $.ajax({
+//         type: "POST",
+//         dataType: "html",
+//         url: ajax_posts.ajaxurl,
+//         data: str,
+//         success: function(data){
+//             var $data = $(data);
+//             if($data.length){
+//                 $("#podContentTitles").remove();
+//                 $("#podContent").removeClass("remove").addClass("show");
+//                 $("#podContent").append($data);
+//                 $("#more_posts").attr("disabled",false);
+//             } else{
+//                 $("#more_posts").attr("disabled",true);
+//                 // $("#more_posts").addClass("remove");
+//             }
+//         },
+//         error : function(jqXHR, textStatus, errorThrown) {
+//             $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+//         }
 
-    });
-    return false;
-}
+//     });
+//     return false;
+// }
 
+//Load all titles so that users can scroll through just titles, but no description or play buttons...
 function load_all_posts(){
     pageNumber++;
     var str = '&pageNumber=' + pageNumber + '&ppp=' + app + '&action=all_post_ajax';
@@ -169,28 +170,63 @@ function load_all_posts(){
     });
     return false;
 }
-
+    //load more
+    // on click function to invoke the load more posts ajax call.  Loads 8 more podcasts.
     $("#more_posts").on("click",function(){ // When btn is pressed.
         $("#more_posts").attr("disabled",true); // Disable the button, temp.
         load_posts();
         $(this).insertAfter('#podContent'); // Move the 'Load More' button to the end of the the newly added posts.
     });
 
+    //search by title
+    // on click function to invoke the load all posts, but just their titles via a new ajax call.  Loads all podcast titles.
     $("#all_posts").on("click",function(){ // When btn is pressed.
         $("#all_posts").attr("disabled",true); // Disable the button, temp.
         load_all_posts();
-        $('#podContent').addClass('remove');
-        $("#more_posts").addClass("remove");
-        $("#all_posts").addClass("remove");
-        $("#new_more_posts").removeClass("remove");
-        $("#new_more_posts").addClass("show");
+        $('#podContent').addClass('remove'); //hides the #podContent div
+        $("#more_posts").addClass("remove"); //hides the Load more div/button
+        //$("#more_posts").remove(); //hides the Load more div/button
+        $("#all_posts").addClass("remove"); //hides the Search by Title button
+        //$("#all_posts").remove(); //hides the Search by Title button
+        $("#show_latest_episodes").removeClass("remove").addClass("show_button"); //displays the Show Latest Episodes button in the right sidebar(only when in Search by Title mode)
+        //$("#new_more_posts").addClass("show"); //Give the Show Latest Episodes button a show class - not sure this is needed.
     });
 
-    $("#new_more_posts").on("click",function(){ // When btn is pressed.
-        $("#more_posts").attr("disabled",true); // Disable the button, temp.
-        re_load_posts();
-        $(this).insertAfter('#podContent'); // Move the 'Load More' button to the end of the the newly added posts.
-    });
+    $("#show_latest_episodes").on("click", function () {
+        //const element = $("#podContent");
+        //var podcasts = $("#podContent");
+        var $podcasts = $("#podContent");
+        if ($("#podContent").hasClass("remove")) {
+            $("#podContent").addClass("show_button");
+            $("#podContentTitles").addClass("remove").removeClass("show_button");
+            $("#show_latest_episodes").addClass("remove").removeClass("show_button");
+            $("#show_all_posts").addClass("show_button").removeClass("remove");
+            $("#load_more").addClass("show_button").removeClass("remove");
+        } else {
+            $("#podContent").style.display = "none";
+        }
+      });
+
+      $("#show_all_posts").on("click", function () {
+        $("#podContentTitles").addClass("show_button").removeClass("remove");
+        $("#podContent").removeClass("show_button").addClass("remove");
+        $("#show_latest_episodes").addClass("show_button").removeClass("remove");
+        $("#show_all_posts").addClass("remove").removeClass("show_button");
+      })
+
+    //$("#all_posts").onclick=function(){showContent('#podContentTitles');}
+ 
+    //toggle back to latest podcasts
+    // on click function to hide the posts/podcasts by title and revert back to the posts loaded into the #podContent div
+    // $("#toggle_to_more_posts").on("click",function(){ // When btn is pressed.
+    //     $("#toggle_to_more_posts").attr("disabled",true);
+    //     $('#podContent').removeClass("remove").addClass('show'); // Disable the button, temp.
+    //     $('#podContentTitles').removeClass("show").addClass('remove'); // Disable the button, temp.
+    //     $("#toggle_to_more_posts").removeClass("show").addClass("remove");
+    //     //$(this).insertAfter('#sidebar_nav'); // Move the 'Load More' button to the end of the the newly added posts.
+    //     $("#more_posts").removeClass("remove").addClass("show");
+    //     $("#all_posts").removeClass("remove").addClass("show");
+    // });
 
 }(jQuery, window));
 

@@ -1,4 +1,4 @@
-<div id="podContent" class="one two">
+<div id="podContent" class="one">
 
 <?php
             //use wp_query to get cpts and order by post order attributes
