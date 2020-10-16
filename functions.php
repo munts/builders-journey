@@ -552,17 +552,18 @@ function all_post_ajax(){
                                 <h2 class="podTitle"><a href="<?= $podUrl; ?>"><?= $podTitle; ?></a></h2>
                             </div>
                             <div class="hidden-xs col-sm-4">
-                                <ul class="post-icons">
-                                    <?php if (!empty ($vidUrl)) { ?>
-                                        <li><img src="/wp-content/themes/one-confluence/assets/movie-xs.png"></li>
-                                    <?php } 
+                            <div id="podDetails">
+                                    <?php 
+                                    if (!empty ($vidUrl)) { ?>
+                                        <a class="moreIcon" href="<?= $vidUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/movie-xs.png" style=""></a>
+                                    <?php }
                                     if (!empty ($images)) { ?>
-                                        <li><img src="/wp-content/themes/one-confluence/assets/camera-xs.png"></li>
+                                        <a class="moreIcon" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/camera-xs.png" style=""></a>
                                     <?php }
                                     if (!empty ($podUrl)) { ?>
-                                        <li><img src="/wp-content/themes/one-confluence/assets/mic_headphones-xs.png"></li>
+                                        <a class="moreIcon" href="<?= $podUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/mic_headphones-xs.png" style=""></a>
                                     <?php } ?>
-                                </ul>
+                                    </div>
                             </div>
                         </div>
                     </div>
