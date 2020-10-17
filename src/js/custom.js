@@ -201,7 +201,7 @@ function load_all_posts(){
             $("#podContentTitles").addClass("remove").removeClass("show_button");
             $("#show_latest_episodes").addClass("remove").removeClass("show_button");
             $("#show_all_posts").addClass("show_button").removeClass("remove");
-            $("#load_more").addClass("show_button").removeClass("remove");
+            $("#more_posts").addClass("show_button").removeClass("remove");
         } else {
             $("#podContent").style.display = "none";
         }
@@ -212,6 +212,7 @@ function load_all_posts(){
         $("#podContent").removeClass("show_button").addClass("remove");
         $("#show_latest_episodes").addClass("show_button").removeClass("remove");
         $("#show_all_posts").addClass("remove").removeClass("show_button");
+        $("#more_posts").addClass("remove").removeClass("show_button");
       })
 
     //$("#all_posts").onclick=function(){showContent('#podContentTitles');}
