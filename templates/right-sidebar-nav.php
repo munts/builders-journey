@@ -17,7 +17,7 @@
     <div class="card-body">
         <h5 class="card-title">Subscribe!!!</h5>
         <p class="card-text">Don't Miss Out!  Get email notifications as new episodes are released.</p>
-        <?php gravity_form( 2, false, false, false, '', false ); ?>
+        <?php //gravity_form( 2, false, false, false, '', false ); ?>
     </div>
 </div>
 
