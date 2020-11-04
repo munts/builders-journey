@@ -33,6 +33,7 @@
                 else :
                     $tax = '';
                 endif;
+                $postedOn = get_the_date( 'D M j' );
                 $images = get_field('gallery', $podPost->ID);
                 $podTitle = get_the_title($podPost);
                 $podUrl = get_permalink($podPost);
@@ -62,6 +63,7 @@
                                     <?php
                                     echo '<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/'. $podId . '/height/90/theme/custom/thumbnail/yes/preload/no/direction/backward/render-playlist/no/custom-color/145da1/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>';
                                     ?>
+                                    <span style="font-weight:normal;color:#333;font-size:12px;">Posted: <?= $postedOn; ?></span>
                                 </div>
                                 <div class="col-xs-12 col-sm-1" style="padding:0;">
                                     <img src="<?= $pod_thumbnail; ?>" class="img-responsive" style="width:100px;">
