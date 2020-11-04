@@ -46,7 +46,8 @@ $fontStyle = one_get_option('font-style');
 <!--            </div>-->
             <div class="welcome-quote">
                 <?= $descriptionOne; ?>
-                <div style="display:block;margin-top:60px;"><a class="btn btn-primary" href="#podcasts">Listen Here<br><img src="/wp-content/themes/one-confluence/assets/icons8-chevron-down-24.png"></a></div>
+                <!-- <div style="display:block;margin-top:60px;"><a class="btn btn-primary" href="#podcasts">Listen Here<br><img src="/wp-content/themes/one-confluence/assets/icons8-chevron-down-24.png"></a></div> -->
+                <div style="display:block;margin-top:60px;"><a class="" href="#podcasts"><img src="/wp-content/themes/one-confluence/assets/tbj_listen_here.png"></a></div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-5" style="padding-top:15px;">
