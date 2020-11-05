@@ -67,7 +67,7 @@ $images = get_field('gallery');
                 </div>
         </div>
         <?php endwhile;
-        get_template_part('templates/blog-title-block-section');
+        //get_template_part('templates/blog-title-block-section');
         get_template_part('templates/footer-block-post');
         ?>
     </div>
