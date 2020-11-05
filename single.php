@@ -7,7 +7,7 @@
  * @package One Confluence
  * @subpackage Customizations
  */
-get_header('two');
+get_header('three');
 
 global $post;
 //hero Variable
