@@ -60,27 +60,27 @@ function one_register_frontpage_metabox() {
     ) );
 
     // Static Hero vs. Slider toggle
-    $cmb_demo->add_field( array(
-        'name'    => 'This Radio button determines which layout to use for the top of the site',
-        'id'      => $prefix .'hero_layout',
-        'type'    => 'radio_inline',
-        'options' => array(
-            'hero' => __( 'Static Hero', 'cmb2' ),
-            'slider'   => __( 'Slider/Carousel', 'cmb2' ),
-        ),
-        'default' => 'hero',
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name'    => 'This Radio button determines which layout to use for the top of the site',
+    //     'id'      => $prefix .'hero_layout',
+    //     'type'    => 'radio_inline',
+    //     'options' => array(
+    //         'hero' => __( 'Static Hero', 'cmb2' ),
+    //         'slider'   => __( 'Slider/Carousel', 'cmb2' ),
+    //     ),
+    //     'default' => 'hero',
+    // ) );
 
     // This is the Slider ID
-    $cmb_demo->add_field( array(
-        'name' => __( 'Post ID for the Homepage Slider', 'cmb2' ),
-        'desc' => __( 'This is the post id of the Homepage Slider section that is to be used on the homepage, if a static hero image is not selected.', 'cmb2' ),
-        'id'   => $prefix . 'slider_id',
-        'type' => 'text',
-        'before_row'   => '<div style="padding:30px 0;">This is the To Slider Section that puts a slider at the top of the website:  <b>"POST ID"</b></div>',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Post ID for the Homepage Slider', 'cmb2' ),
+    //     'desc' => __( 'This is the post id of the Homepage Slider section that is to be used on the homepage, if a static hero image is not selected.', 'cmb2' ),
+    //     'id'   => $prefix . 'slider_id',
+    //     'type' => 'text',
+    //     'before_row'   => '<div style="padding:30px 0;">This is the To Slider Section that puts a slider at the top of the website:  <b>"POST ID"</b></div>',
+    //     // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+    //     // 'repeatable' => true,
+    // ) );
 
     $cmb_demo->add_field( array(
         'name' => __( 'Block One: Image', 'cmb2' ),
@@ -89,46 +89,46 @@ function one_register_frontpage_metabox() {
         'type' => 'file',
     ) );
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Block One: Top Title', 'cmb2' ),
-        'desc' => __( 'This is the title that gets displayed in the middle Title Block container.  Ie. Purpose, but it can be changed to love or passion, etc.', 'cmb2' ),
-        'id'   => $prefix . 'one_top',
-        'type' => 'text',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Block One: Top Title', 'cmb2' ),
+    //     'desc' => __( 'This is the title that gets displayed in the middle Title Block container.  Ie. Purpose, but it can be changed to love or passion, etc.', 'cmb2' ),
+    //     'id'   => $prefix . 'one_top',
+    //     'type' => 'text',
+    //     // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+    //     // 'repeatable' => true,
+    // ) );
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Block One: Sub-Heading Title', 'cmb2' ),
-        'desc' => __( 'This is a sub heading that goes just below the Top Title.  This is an H2.', 'cmb2' ),
-        'id'   => $prefix . 'one_bottom',
-        'type' => 'text',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Block One: Sub-Heading Title', 'cmb2' ),
+    //     'desc' => __( 'This is a sub heading that goes just below the Top Title.  This is an H2.', 'cmb2' ),
+    //     'id'   => $prefix . 'one_bottom',
+    //     'type' => 'text',
+    //     // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+    //     // 'repeatable' => true,
+    // ) );
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Seven Step Button: Image', 'cmb2' ),
-        'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
-        'id'   => $prefix . 'seven_step_button',
-        'type' => 'file',
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Seven Step Button: Image', 'cmb2' ),
+    //     'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
+    //     'id'   => $prefix . 'seven_step_button',
+    //     'type' => 'file',
+    // ) );
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Seven Step File URL', 'cmb2' ),
-        'desc' => __( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'seven_step_url',
-        'type' => 'text_url',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
-    $cmb_demo->add_field( array(
-        'name'    => __( 'Seven Step Content', 'cmb2' ),
-        'desc'    => __( 'This is where you enter the form shortcode or other content you want to display for the Seven Step Prcess.', 'cmb2' ),
-        'id'      => $prefix . 'seven_step_wysiwyg',
-        'type'    => 'wysiwyg',
-        'options' => array( 'textarea_rows' => 2, ),
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Seven Step File URL', 'cmb2' ),
+    //     'desc' => __( 'field description (optional)', 'cmb2' ),
+    //     'id'   => $prefix . 'seven_step_url',
+    //     'type' => 'text_url',
+    //     // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+    //     // 'repeatable' => true,
+    // ) );
+    // $cmb_demo->add_field( array(
+    //     'name'    => __( 'Seven Step Content', 'cmb2' ),
+    //     'desc'    => __( 'This is where you enter the form shortcode or other content you want to display for the Seven Step Prcess.', 'cmb2' ),
+    //     'id'      => $prefix . 'seven_step_wysiwyg',
+    //     'type'    => 'wysiwyg',
+    //     'options' => array( 'textarea_rows' => 2, ),
+    // ) );
 
     $cmb_demo->add_field( array(
         'name'    => __( 'One wysiwyg', 'cmb2' ),
@@ -147,14 +147,14 @@ function one_register_frontpage_metabox() {
         // 'repeatable' => true,
     ) );*/
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Block two: Top Title', 'cmb2' ),
-        'desc' => __( 'H1 heading for the second block/section', 'cmb2' ),
-        'id'   => $prefix . 'two_top',
-        'type' => 'text',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Block two: Top Title', 'cmb2' ),
+    //     'desc' => __( 'H1 heading for the second block/section', 'cmb2' ),
+    //     'id'   => $prefix . 'two_top',
+    //     'type' => 'text',
+    //     // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+    //     // 'repeatable' => true,
+    // ) );
 
     /*$cmb_demo->add_field( array(
         'name' => __( 'Block two: Bottom Title/Subheading', 'cmb2' ),
@@ -173,12 +173,12 @@ function one_register_frontpage_metabox() {
         'type' => 'file',
     ) );*/
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Block two: Image', 'cmb2' ),
-        'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
-        'id'   => $prefix . 'two_image',
-        'type' => 'file',
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Block two: Image', 'cmb2' ),
+    //     'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
+    //     'id'   => $prefix . 'two_image',
+    //     'type' => 'file',
+    // ) );
 
     $cmb_demo->add_field( array(
         'name'    => __( 'two wysiwyg', 'cmb2' ),
@@ -188,14 +188,14 @@ function one_register_frontpage_metabox() {
         'options' => array( 'textarea_rows' => 2, ),
     ) );
 
-        $cmb_demo->add_field( array(
-        'name' => __( 'Block three: Top Title', 'cmb2' ),
-        'desc' => __( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'three_top',
-        'type' => 'text',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Block three: Top Title', 'cmb2' ),
+    //     'desc' => __( 'field description (optional)', 'cmb2' ),
+    //     'id'   => $prefix . 'three_top',
+    //     'type' => 'text',
+    //     // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+    //     // 'repeatable' => true,
+    // ) );
 
    /* $cmb_demo->add_field( array(
         'name' => __( 'Block three: Bottom Title/Subheading', 'cmb2' ),
@@ -206,12 +206,12 @@ function one_register_frontpage_metabox() {
         // 'repeatable' => true,
     ) ); */
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Block three: Image', 'cmb2' ),
-        'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
-        'id'   => $prefix . 'three_image',
-        'type' => 'file',
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Block three: Image', 'cmb2' ),
+    //     'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
+    //     'id'   => $prefix . 'three_image',
+    //     'type' => 'file',
+    // ) );
 
     $cmb_demo->add_field( array(
         'name'    => __( 'three wysiwyg', 'cmb2' ),
@@ -222,14 +222,14 @@ function one_register_frontpage_metabox() {
     ) );
 
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Block four: Top Title', 'cmb2' ),
-        'desc' => __( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'four_top',
-        'type' => 'text',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Block four: Top Title', 'cmb2' ),
+    //     'desc' => __( 'field description (optional)', 'cmb2' ),
+    //     'id'   => $prefix . 'four_top',
+    //     'type' => 'text',
+    //     // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+    //     // 'repeatable' => true,
+    // ) );
 
     /* $cmb_demo->add_field( array(
         'name' => __( 'Block four: Bottom Title', 'cmb2' ),
@@ -240,20 +240,20 @@ function one_register_frontpage_metabox() {
         // 'repeatable' => true,
     ) ); */
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Block four: Image', 'cmb2' ),
-        'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
-        'id'   => $prefix . 'four_image',
-        'type' => 'file',
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Block four: Image', 'cmb2' ),
+    //     'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
+    //     'id'   => $prefix . 'four_image',
+    //     'type' => 'file',
+    // ) );
 
-    $cmb_demo->add_field( array(
-        'name'    => __( 'Four wysiwyg', 'cmb2' ),
-        'desc'    => __( 'content field', 'cmb2' ),
-        'id'      => $prefix . 'four_wysiwyg',
-        'type'    => 'wysiwyg',
-        'options' => array( 'textarea_rows' => 2, ),
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name'    => __( 'Four wysiwyg', 'cmb2' ),
+    //     'desc'    => __( 'content field', 'cmb2' ),
+    //     'id'      => $prefix . 'four_wysiwyg',
+    //     'type'    => 'wysiwyg',
+    //     'options' => array( 'textarea_rows' => 2, ),
+    // ) );
 
     // This is the Team Post ID
     $cmb_demo->add_field( array(
@@ -330,14 +330,14 @@ function one_register_frontpage_metabox() {
         'after_row'   => '<p style="font-style: italic;">Restart the content sections/blocks.</p>',
     ) );
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Block five: Top Title', 'cmb2' ),
-        'desc' => __( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'five_top',
-        'type' => 'text',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Block five: Top Title', 'cmb2' ),
+    //     'desc' => __( 'field description (optional)', 'cmb2' ),
+    //     'id'   => $prefix . 'five_top',
+    //     'type' => 'text',
+    //     // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+    //     // 'repeatable' => true,
+    // ) );
 
    /* $cmb_demo->add_field( array(
         'name' => __( 'Block five: Bottom Title', 'cmb2' ),
@@ -348,75 +348,75 @@ function one_register_frontpage_metabox() {
         // 'repeatable' => true,
     ) ); */
 
-    $cmb_demo->add_field( array(
-        'name' => __( 'Block five: Image', 'cmb2' ),
-        'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
-        'id'   => $prefix . 'five_image',
-        'type' => 'file',
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name' => __( 'Block five: Image', 'cmb2' ),
+    //     'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
+    //     'id'   => $prefix . 'five_image',
+    //     'type' => 'file',
+    // ) );
 
-    $cmb_demo->add_field( array(
-        'name'    => __( 'five wysiwyg', 'cmb2' ),
-        'desc'    => __( 'field description (optional)', 'cmb2' ),
-        'id'      => $prefix . 'five_wysiwyg',
-        'type'    => 'wysiwyg',
-        'options' => array( 'textarea_rows' => 2, ),
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name'    => __( 'five wysiwyg', 'cmb2' ),
+    //     'desc'    => __( 'field description (optional)', 'cmb2' ),
+    //     'id'      => $prefix . 'five_wysiwyg',
+    //     'type'    => 'wysiwyg',
+    //     'options' => array( 'textarea_rows' => 2, ),
+    // ) );
 
 
     // New What's in a name custom fields - New as of Oct-2018 -
     // These use the 3-4 paragraphs of text with the plumb bob, Navigate the stars, Eiffel Tower...
-    $cmb_demo->add_field( array(
-        'name'    => __( 'Whats in a name Plumb Bob image', 'cmb2' ),
-        'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
-        'id'   => $prefix . 'name_plumb_bob',
-        'type' => 'file',
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name'    => __( 'Whats in a name Plumb Bob image', 'cmb2' ),
+    //     'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
+    //     'id'   => $prefix . 'name_plumb_bob',
+    //     'type' => 'file',
+    // ) );
 
-    $cmb_demo->add_field( array(
-        'name'    => __( 'Whats in a name Contact image', 'cmb2' ),
-        'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
-        'id'   => $prefix . 'name_contact_image',
-        'type' => 'file',
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name'    => __( 'Whats in a name Contact image', 'cmb2' ),
+    //     'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
+    //     'id'   => $prefix . 'name_contact_image',
+    //     'type' => 'file',
+    // ) );
 
-    $cmb_demo->add_field( array(
-        'name'    => __( 'Whats in a name Signature image', 'cmb2' ),
-        'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
-        'id'   => $prefix . 'name_signature_image',
-        'type' => 'file',
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name'    => __( 'Whats in a name Signature image', 'cmb2' ),
+    //     'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
+    //     'id'   => $prefix . 'name_signature_image',
+    //     'type' => 'file',
+    // ) );
 
-    $cmb_demo->add_field( array(
-        'name'    => __( 'Whats in a name Paragraph 1', 'cmb2' ),
-        'desc'    => __( '', 'cmb2' ),
-        'id'      => $prefix . 'name_paragraph_one',
-        'type'    => 'wysiwyg',
-        'options' => array( 'textarea_rows' => 2, ),
-    ) );
-    $cmb_demo->add_field( array(
-        'name'    => __( 'Whats in a name Paragraph 2', 'cmb2' ),
-        'desc'    => __( '', 'cmb2' ),
-        'id'      => $prefix . 'name_paragraph_two',
-        'type'    => 'wysiwyg',
-        'options' => array( 'textarea_rows' => 2, ),
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name'    => __( 'Whats in a name Paragraph 1', 'cmb2' ),
+    //     'desc'    => __( '', 'cmb2' ),
+    //     'id'      => $prefix . 'name_paragraph_one',
+    //     'type'    => 'wysiwyg',
+    //     'options' => array( 'textarea_rows' => 2, ),
+    // ) );
+    // $cmb_demo->add_field( array(
+    //     'name'    => __( 'Whats in a name Paragraph 2', 'cmb2' ),
+    //     'desc'    => __( '', 'cmb2' ),
+    //     'id'      => $prefix . 'name_paragraph_two',
+    //     'type'    => 'wysiwyg',
+    //     'options' => array( 'textarea_rows' => 2, ),
+    // ) );
 
-    $cmb_demo->add_field( array(
-        'name'    => __( 'Whats in a name Paragraph 3', 'cmb2' ),
-        'desc'    => __( '', 'cmb2' ),
-        'id'      => $prefix . 'name_paragraph_three',
-        'type'    => 'wysiwyg',
-        'options' => array( 'textarea_rows' => 2, ),
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name'    => __( 'Whats in a name Paragraph 3', 'cmb2' ),
+    //     'desc'    => __( '', 'cmb2' ),
+    //     'id'      => $prefix . 'name_paragraph_three',
+    //     'type'    => 'wysiwyg',
+    //     'options' => array( 'textarea_rows' => 2, ),
+    // ) );
 
-    $cmb_demo->add_field( array(
-        'name'    => __( 'Whats in a name Paragraph 4', 'cmb2' ),
-        'desc'    => __( '', 'cmb2' ),
-        'id'      => $prefix . 'name_paragraph_four',
-        'type'    => 'wysiwyg',
-        'options' => array( 'textarea_rows' => 2, ),
-    ) );
+    // $cmb_demo->add_field( array(
+    //     'name'    => __( 'Whats in a name Paragraph 4', 'cmb2' ),
+    //     'desc'    => __( '', 'cmb2' ),
+    //     'id'      => $prefix . 'name_paragraph_four',
+    //     'type'    => 'wysiwyg',
+    //     'options' => array( 'textarea_rows' => 2, ),
+    // ) );
 
 
     // old What's in a name fields - pre Oct-2018 - these tools used the modal to display a letter/pdf...
