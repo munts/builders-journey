@@ -69,7 +69,8 @@
                                     <img src="<?= $pod_thumbnail; ?>" class="img-responsive" style="width:100px;">
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
-                                    <div class="podcastExcerpt"><?= $podDescriptionOutput; ?></div>
+                                    <div class="podcastExcerpt"><?= $podDescriptionOutput; ?> <a class="moreLink" href="<?= $podUrl; ?>">Read More</a>
+                                   </div>
                                     <div id="podDetails">
                                     <?php 
                                     if (!empty ($vidUrl)) { ?>
