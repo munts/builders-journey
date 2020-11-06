@@ -18,7 +18,7 @@ $images = get_field('gallery');
 
         <div class="fullwidthbanner-container container blog-hero">
             <div class="row">
-                <div class="col-xs-12 hero-container" style="">
+                <div class="col-xs-12 col-sm-10 col-sm-push-1 hero-container" style="">
                     <img class="img-responsive" src="<?= $imageUrl; ?>" style="width:100%;">
                 </div>
             </div>
