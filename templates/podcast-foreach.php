@@ -33,7 +33,7 @@
                 else :
                     $tax = '';
                 endif;
-                $postedOn = get_the_date( 'F m, Y' );
+                $postedOn = get_the_date( 'F m, Y', $podPost->ID );
                 $images = get_field('gallery', $podPost->ID);
                 $podTitle = get_the_title($podPost);
                 $podUrl = get_permalink($podPost);
