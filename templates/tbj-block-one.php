@@ -35,22 +35,22 @@ $fontStyle = one_get_option('font-style');
 <section id="passion" class="" data-title="<?= $topTitleOne; ?>" style="padding-bottom:200px;min-height:800px">
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-4" style="padding: 0 30px;">
             <div class="featured-content-left purpose copy">
                 <img src="<?= $imageOne; ?>" class="img-responsive">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-3">
+        <div class="col-xs-12 col-sm-4" style="padding:30px">
 <!--            <div class="quote-subheading clearfix">-->
 <!--                --><?//= $topTitleSubHeadingOne; ?>
 <!--            </div>-->
             <div class="welcome-quote">
                 <?= $descriptionOne; ?>
                 <!-- <div style="display:block;margin-top:60px;"><a class="btn btn-primary" href="#podcasts">Listen Here<br><img src="/wp-content/themes/one-confluence/assets/icons8-chevron-down-24.png"></a></div> -->
-                <div style="display:block;margin-top:60px;"><a class="" href="#podcasts"><img src="/wp-content/themes/one-confluence/assets/tbj_listen_here.png"></a></div>
+                <div style="display:block;margin-top:31px;"><a class="" href="#podcasts"><img src="/wp-content/themes/one-confluence/assets/tbj_listen_here.png"></a></div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-5" style="padding-top:15px;">
+        <div class="col-xs-12 col-sm-4" style="padding:30px 15px;">
 
             <div class="video-responsive">
                 <iframe width="420" height="315" src="https://player.vimeo.com/video/461013559" frameborder="0" allowfullscreen></iframe>
