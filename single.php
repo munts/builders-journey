@@ -30,7 +30,7 @@ $images = get_field('gallery');
         <div class="container blog-content">
                 <div class="row">
                     <?php if (empty($images)) { ?>
-                        <div class="col-xs-12 section-title-wrapper" style="padding:15px;">
+                        <div class="col-xs-12 col-sm-8 col-sm-push-2 section-title-wrapper" style="padding:15px;">
                             <h1 class="light-version"><?= the_title(); ?></h1>
                             <p><?= the_content(); ?></p>
                         </div>
