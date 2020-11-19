@@ -21,7 +21,7 @@ get_header('three');
                     If you've ever wondered what it was like to live, work and play in a world class 
                     community high atop the Rockies, here's your chance. There might be some twist and turns along the way, so 
                     buckle up for your safety and welcome to the journey.
-                    <div style="display:block;margin-top:31px;"><a class="" href="#podcasts"><img src="/wp-content/themes/one-confluence/assets/tbj_listen_here.png"></a></div>
+                    <div style="display:block;margin-top:31px;"><a class="" href="#podcast-section"><img src="/wp-content/themes/one-confluence/assets/tbj_listen_here.png"></a></div>
                     </div>
                     
                 </div>
