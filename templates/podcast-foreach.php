@@ -7,7 +7,7 @@
 	        $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
             $podResults = new WP_Query(array(
                 'post_type' => 'podcasts',
-                'posts_per_page' => 8,
+                'posts_per_page' => -1,
                 'paged'          => $paged,
                 'orderby' => 'date',
                 'order' => 'DESC',
@@ -33,7 +33,8 @@
                 else :
                     $tax = '';
                 endif;
-                $postedOn = get_the_date( 'F m, Y', $podPost->ID );
+                $postedOn = get_the_date( 'F m, Y' );
+                $today = date( 'F m, Y' );
                 $images = get_field('gallery', $podPost->ID);
                 $podTitle = get_the_title($podPost);
                 $podUrl = get_permalink($podPost);
@@ -59,7 +60,13 @@
                         <div class="container-fluid">
                             <div class="row podRow">
                                 <div class="col-xs-12 col-sm-5">
-                                <span style="font-weight:normal;color:#333;font-size:12px;"><?= $postedOn; ?></span>
+                                <span style="font-weight:normal;color:#333;font-size:12px;"><?php
+                                if ( $postedOn == $today ) {
+                                    echo get_the_date();
+                                } else {
+                                    echo get_the_date('F m, Y', $podPost->ID);
+                                }
+                                ?></span>
                                     <h2 class="podTitle"><a href="<?= $podUrl; ?>"><?= $podTitle; ?></a></h2>
                                     <?php
                                     echo '<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/'. $podId . '/height/90/theme/custom/thumbnail/yes/preload/no/direction/backward/render-playlist/no/custom-color/145da1/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>';
