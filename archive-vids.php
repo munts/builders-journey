@@ -12,16 +12,20 @@ get_header('three');
     <section id="passion" class="" style="padding-bottom:200px;min-height:800px">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-4"><img src="/wp-content/themes/one-confluence/assets/T_V_Sketch-alex.png" class="img-responsive"></div>
-                <div class="col-xs-12 col-sm-3">
-                    <div class="quote-subheading clearfix" style="padding:90px"></div>
+                <div class="col-xs-12 col-sm-4" style="padding: 0 30px;margin-top:-40px;">
+                    <img src="/wp-content/themes/one-confluence/assets/T_V_Sketch-alex.png" class="img-responsive">
+                </div>
+                <div class="col-xs-12 col-sm-4" style="padding:30px">
+                    <div class="quote-subheading clearfix" style="padding:45px 90px"></div>
                     <div class="welcome-quote" style="font-family:'Montserrat' !important;font-weight:300;font-size:18px;color:#666666;line-height:24px;font-style:normal;text-align:center;padding:0 15px;">
                     If you've ever wondered what it was like to live, work and play in a world class 
                     community high atop the Rockies, here's your chance. There might be some twist and turns along the way, so 
                     buckle up for your safety and welcome to the journey.
+                    <div style="display:block;margin-top:31px;"><a class="" href="#podcasts"><img src="/wp-content/themes/one-confluence/assets/tbj_listen_here.png"></a></div>
                     </div>
+                    
                 </div>
-                <div class="col-xs-12 col-sm-5" style="padding-top:180px;">
+                <div class="col-xs-12 col-sm-4" style="padding:115px 15px;">
                     <div class="video-responsive">
                         <iframe width="420" height="315" src="https://player.vimeo.com/video/463089161" frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -35,7 +39,7 @@ get_header('three');
 
             <div id="latest-cta" class="row">
                 <div class="col-xs-12" style="text-align:center;">
-                    <div style="display:inline-block;"><a class="btn btn-primary" href="#podcasts">Latest Episodes<br><img src="/wp-content/themes/one-confluence/assets/icons8-chevron-down-24.png"></a></div>
+                    <!-- <div style="display:inline-block;"><a class="btn btn-primary" href="#podcasts">Latest Episodes<br><img src="/wp-content/themes/one-confluence/assets/icons8-chevron-down-24.png"></a></div> -->
 
                 </div>
             </div>
