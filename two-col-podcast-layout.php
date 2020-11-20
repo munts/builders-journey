@@ -29,7 +29,7 @@ $podcastCategory = get_post_meta($post->ID,'_confluence_two_col_podcast_category
         </div>
         <div id="latest-cta" class="row" style="position:absolute;left:44%;bottom:150px;">
             <div class="col-xs-12" style="text-align:center;">
-                <div style="display:inline-block;"><a class="btn btn-primary" href="#podcast-section">Latest Episodes</a></div>
+            <div style="display:block;margin-top:31px;"><a class="" href="#podcast-section"><img src="/wp-content/themes/one-confluence/assets/tbj_watch_here.png"></a></div>
             </div>
         </div>
     </div>
