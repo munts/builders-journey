@@ -62,7 +62,7 @@
                                 <div class="col-xs-12 col-sm-5">
                                 <span style="font-weight:normal;color:#333;font-size:12px;"><?php
                                 if ( $postedOn == $today ) {
-                                    echo get_the_date();
+                                    echo get_the_date('F m, Y', $podPost->ID);
                                 } else {
                                     echo get_the_date('F m, Y', $podPost->ID);
                                 }
