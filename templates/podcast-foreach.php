@@ -62,9 +62,9 @@
                                 <div class="col-xs-12 col-sm-5">
                                 <span style="font-weight:normal;color:#333;font-size:12px;"><?php
                                 if ( $postedOn == $today ) {
-                                    echo get_the_date('F m, Y', $podPost->ID);
+                                    echo get_the_date('F d, Y', $podPost->ID);
                                 } else {
-                                    echo get_the_date('F m, Y', $podPost->ID);
+                                    echo get_the_date('F d, Y', $podPost->ID);
                                 }
                                 ?></span>
                                     <h2 class="podTitle"><a href="<?= $podUrl; ?>"><?= $podTitle; ?></a></h2>
