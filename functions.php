@@ -551,9 +551,9 @@ function all_post_ajax(){
                             <div class="col-xs-12 col-sm-8"> 
                                 <h2 class="podTitle"><a href="<?= $podUrl; ?>"><?= $podTitle; ?></a><span style="font-weight:normal;color:#333;font-size:12px;"><?php
                                 if ( $postedOn == $today ) {
-                                    echo get_the_date('F d, Y', $podPost->ID);
+                                    echo ' ' . get_the_date('F d, Y', $podPost->ID);
                                 } else {
-                                    echo get_the_date('F d, Y', $podPost->ID);
+                                    echo ' ' . get_the_date('F d, Y', $podPost->ID);
                                 }
                                 ?></span></h2>
                             </div>
