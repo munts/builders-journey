@@ -47,6 +47,7 @@
                 $image = wp_get_attachment_image( get_post_meta($podPost->ID, '_one_podcast_pod_thumbnail_id', 1 ), 'thumb' );
                 $pod_iframeUrl = get_post_meta($podPost->ID, '_one_podcast_iframe_url', true);
                 $podId = get_post_meta($podPost->ID, '_one_podcast_episode_id', true);
+                $podLength = get_post_meta($podPost->ID, '_one_podcast_episode_length', true);
                 $vidUrl = get_post_meta($podPost->ID, '_one_podcast_video_url', true);
                 $podLongDescription = get_post_meta($podPost->ID, '_one_podcast_description', true);
                 $podShortDescription = get_post_meta($podPost->ID, '_one_podcast_short_description', true);
@@ -60,13 +61,24 @@
                         <div class="container-fluid">
                             <div class="row podRow">
                                 <div class="col-xs-12 col-sm-5">
-                                <span style="font-weight:normal;color:#333;font-size:12px;"><?php
-                                if ( $postedOn == $today ) {
-                                    echo get_the_date('F d, Y', $podPost->ID);
-                                } else {
-                                    echo get_the_date('F d, Y', $podPost->ID);
-                                }
-                                ?></span>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-xs-6" style="padding:0;font-weight:normal;color:#333;font-size:12px;">
+                                                <?php
+                                                    if ( $postedOn == $today ) {
+                                                        echo get_the_date('F d, Y', $podPost->ID);
+                                                    } else {
+                                                        echo get_the_date('F d, Y', $podPost->ID);
+                                                    }
+                                                ?>
+                                            </div>
+                                            <div class="col-xs-6" style="padding:0;font-weight:normal;color:#333;font-size:12px;text-align:right;">
+                                                <?= $podLength; ?>
+                                            </div>
+                                        </div>
+                                </div>
+                                    <div style="font-weight:normal;color:#333;font-size:12px;"></div>
+
                                     <h2 class="podTitle"><a href="<?= $podUrl; ?>"><?= $podTitle; ?></a></h2>
                                     <?php
                                     echo '<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/'. $podId . '/height/90/theme/custom/thumbnail/yes/preload/no/direction/backward/render-playlist/no/custom-color/145da1/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>';

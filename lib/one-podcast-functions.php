@@ -55,6 +55,15 @@ function one_register_podcast_metabox() {
     ) );
 
     $cmb_demo->add_field( array(
+        'name' => __( 'Podcast Episode Length', 'cmb2' ),
+        'desc' => __( 'Required for the site to work correctly', 'cmb2' ),
+        'id'   => $prefix . 'episode_length',
+        'type' => 'text',
+        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+        // 'repeatable' => true,
+    ) );
+
+    $cmb_demo->add_field( array(
         'name' => __( 'Thumbnail Image', 'cmb2' ),
         'desc' => __( 'This is the thumbnail that gets displayed in next to the podcast.', 'cmb2' ),
         'id'   => $prefix . 'pod_thumbnail',
