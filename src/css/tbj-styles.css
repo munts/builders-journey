@@ -1036,6 +1036,10 @@ and (orientation : portrait) {
     #podContentTitles, #podContent {
         min-width: 710px;
     }
+
+    #blogContent {
+        min-width: 710px;
+    }
 }
 
 @media only screen
