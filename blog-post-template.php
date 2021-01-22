@@ -66,7 +66,7 @@ $imageUrl = wp_get_attachment_url( get_post_thumbnail_id() );
         <div id="portfolio" class="row" style="position:relative !important; padding:30px 0 30px 0;height:100%;">
             <div id="scrolly-side">
                 <div class="scrolly">
-                    <div id="blogContent" class="col-xs-12 col-sm-9 all post-items">
+                    <div id="blogContent" class="col-xs-12 col-sm-9 all post-items" style="border-right:1px solid #595958;">
                         <?php while ( $loop->have_posts() ) : $loop->the_post();
                             $postTitle = get_the_title();
                             $postDate = get_the_date();
@@ -84,7 +84,7 @@ $imageUrl = wp_get_attachment_url( get_post_thumbnail_id() );
                                 //}
                             ?>
                             <div class="blog-post container-fluid">
-                                <div class="row">
+                                <div class="row podRow">
                                     <div class="col-xs-4">
                                         <a href="<?php the_permalink($post->ID); ?>" title="<?= $title; ?>">
                                             <img src="<?= $image; ?>" class="img-responsive alignleft mobile-stack">
