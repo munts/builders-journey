@@ -9,10 +9,14 @@
  */
 get_header('three');
 
+
+
 global $post;
 //hero Variable
 $imageUrl = wp_get_attachment_url( get_post_thumbnail_id() );
 $images = get_field('gallery');
+// otehr vars
+
 ?>
     <div id="main-container" class="container-fluid">
 
@@ -26,19 +30,46 @@ $images = get_field('gallery');
 
         <?php while ( have_posts() ) : the_post(); ?>
 
-
         <div class="container blog-content">
                 <div class="row">
                     <?php if (empty($images)) { ?>
                         <div class="col-xs-12 col-sm-8 col-sm-push-2 section-title-wrapper" style="padding:15px;">
                             <h1 class="light-version"><?= the_title(); ?></h1>
                             <p><?= the_content(); ?></p>
+                            <div class="attached-posts">
+                                <?php
+                                echo '<li><a href="'.get_permalink( $attached_podcasts ).'">'.get_the_title( $attached_podcasts ).'</a></li>';
+                                echo '<li><a href="'.get_permalink( $attached_vids ).'">'.get_the_title( $attached_vids ).'</a></li>';
+                                ?>
+                            </div>
                         </div>
                     <?php }
                     else { ?>
                         <div class="col-xs-12 col-sm-8 section-title-wrapper" style="padding:15px;">
                             <h1 class="light-version"><?= the_title(); ?></h1>
                             <p><?= the_content(); ?></p>
+                            <div class="attached-posts">
+                            <h2>Related Podcast and Video</h2>
+                                <?php
+                                $attached_podcasts = get_post_meta(get_the_ID(), 'attached_cmb2_attached_podcasts', true);
+                                $attached_vids = get_post_meta(get_the_ID(), 'attached_cmb2_attached_vids', true);
+                                //$attached = get_post_meta( get_the_ID(), '_attached_cmb2_attached_posts', true );
+                                
+                                foreach ( $attached_podcasts as $attached_podcast ) {
+                                    $Post = get_post( $attached_podcast );
+                                    //echo get_the_title( $attached_podcast);
+                                    echo '<li><a href="'.get_permalink( $attached_podcast ).'">'.get_the_title( $attached_podcast ).'</a></li>';
+                                }
+
+                                foreach ( $attached_vids as $attached_vid ) {
+                                    $vidPost = get_post( $attached_vid );
+                                    //echo get_the_title( $attached_podcast);
+                                    echo '<li><a href="'.get_permalink( $attached_vid ).'">'.get_the_title( $attached_vid ).'</a></li>';
+                                }
+
+                                //echo '<li><a href="'.get_permalink( $post->$attached_vids ).'">'.get_the_title( $post->$attached_vids ).'</a></li>';
+                                ?>
+                            </div>
                         </div>
                         <div class="col-xs-12 col-sm-4" style="padding:15px;">
                             <div class="photos_gallery">

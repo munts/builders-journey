@@ -8,6 +8,7 @@ require_once( dirname(__FILE__) . '/lib/one-podcast-functions.php');
 require_once( dirname(__FILE__) . '/lib/team-functions.php');
 require_once( dirname(__FILE__) . '/lib/gallery-functions.php');
 require_once( dirname(__FILE__) . '/lib/secondary-functions.php');
+require_once( dirname(__FILE__) . '/lib/post-functions.php');
 require_once( dirname(__FILE__) . '/lib/two-col-podcast-functions.php');
 require_once( dirname(__FILE__) . '/lib/tbj-tv-functions.php');
 require_once( dirname(__FILE__) . '/lib/wp_bootstrap_navwalker.php');

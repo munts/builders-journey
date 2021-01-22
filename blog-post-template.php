@@ -48,7 +48,7 @@ $imageUrl = wp_get_attachment_url( get_post_thumbnail_id() );
                     <?php
                         $terms2 = get_terms('category');
                         $count = count($terms2);
-                        echo '<li><a href="javascript:void(0)" title="" data-filter=".all" data-groupid="-1" class="active filter-all-btn filter-btn">All</a></li>';
+                        //echo '<li><a href="javascript:void(0)" title="" data-filter=".all" data-groupid="-1" class="active filter-all-btn filter-btn">All</a></li>';
                         if ( $count > 0 ){
                             foreach ( $terms2 as $term ) {
                                 $termname = strtolower($term->name);
@@ -56,7 +56,7 @@ $imageUrl = wp_get_attachment_url( get_post_thumbnail_id() );
                                 $termname = str_replace('&amp; ', '', $termname);
                                 $termname = str_replace('&', '-', $termname);
                                 $termname = str_replace(' ', '-', $termname);
-                                echo '<li style="list-style:inline;"><a href="javascript:void(0)" title="" class="filter-btn" data-groupid="'.$termname.'" data-filter=".'.$termname.'">'.$term->name.'</a></li>';
+                                //echo '<li style="list-style:inline;"><a href="javascript:void(0)" title="" class="filter-btn" data-groupid="'.$termname.'" data-filter=".'.$termname.'">'.$term->name.'</a></li>';
                             }
                         }
                     ?>
@@ -69,12 +69,23 @@ $imageUrl = wp_get_attachment_url( get_post_thumbnail_id() );
                     <div id="blogContent" class="col-xs-12 col-sm-9 all post-items" style="border-right:1px solid #595958;">
                         <?php while ( $loop->have_posts() ) : $loop->the_post();
                             $postTitle = get_the_title();
+                            $postUrl = get_the_permalink();
                             $postDate = get_the_date();
                             $thumb = get_post_thumbnail_id();
                             $img_url = wp_get_attachment_url( $thumb,'medium'); //get img URL
                             $image = aq_resize( $img_url, 200, 138, true ); //resize & crop img
                             $excerpt = get_the_excerpt();
                             $excerpt = substr($excerpt, 0, 300);
+                            $attached_podcasts = get_post_meta(get_the_ID(), 'attached_cmb2_attached_podcasts', true);
+                            $attached_vids = get_post_meta(get_the_ID(), 'attached_cmb2_attached_vids', true);
+                            // get fields added to single.php
+                            // get post id of podcast and or video
+                            // if pod post id - set flag to true
+                            // if vid post id - set flag to true
+                                //$vidUrl = get_post_meta($post->ID, '_one_podcast_video_url', true);
+                                //$podId = get_post_meta($post->ID, '_one_podcast_episode_id', true);
+                                //$podUrl = get_permalink($post->ID);
+                                $images = get_field('gallery', $post->ID);
                             if( strlen($excerpt) >= 250 ){
                                 $excerpt .= '... <a href="'. get_permalink($post->ID) .'">More</a>';
                             }
@@ -94,6 +105,18 @@ $imageUrl = wp_get_attachment_url( get_post_thumbnail_id() );
                                         <a href="<?= print get_permalink($post->ID); ?>" class="galleryItem" title="<?= $title;?>"><h2 class="project-title"><?= $postTitle; ?></h2></a>
                                         <div clsss="pod-details"><?= $postDate; ?></div>
                                         <?php echo $excerpt; ?>
+                                        <div id="podDetails">
+                                            <?php 
+                                            if (!empty ($attached_vids)) { ?>
+                                                <a class="moreIcon" href="<?= $postUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/movie-xs.png" style=""></a>
+                                            <?php }
+                                            if (!empty ($images)) { ?>
+                                                <a class="moreIcon" href="<?= $postUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/camera-xs.png" style=""></a>
+                                            <?php }
+                                            if (!empty ($attached_podcasts)) { ?>
+                                                <a class="moreIcon" href="<?= $postUrl; ?>"><img src="/wp-content/themes/one-confluence/assets/mic_headphones-xs.png" style=""></a>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
