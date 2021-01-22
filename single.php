@@ -38,8 +38,23 @@ $images = get_field('gallery');
                             <p><?= the_content(); ?></p>
                             <div class="attached-posts">
                                 <?php
-                                echo '<li><a href="'.get_permalink( $attached_podcasts ).'">'.get_the_title( $attached_podcasts ).'</a></li>';
-                                echo '<li><a href="'.get_permalink( $attached_vids ).'">'.get_the_title( $attached_vids ).'</a></li>';
+                                $attached_podcasts = get_post_meta(get_the_ID(), 'attached_cmb2_attached_podcasts', true);
+                                $attached_vids = get_post_meta(get_the_ID(), 'attached_cmb2_attached_vids', true);
+                                //$attached = get_post_meta( get_the_ID(), '_attached_cmb2_attached_posts', true );
+                                if(!empty($attached_podcasts)){
+                                    foreach ( $attached_podcasts as $attached_podcast ) {
+                                        $Post = get_post( $attached_podcast );
+                                        //echo get_the_title( $attached_podcast);
+                                        echo '<li><a href="'.get_permalink( $attached_podcast ).'">'.get_the_title( $attached_podcast ).'</a></li>';
+                                    }
+                                }
+                                if(!empty($attached_vids)){
+                                    foreach ( $attached_vids as $attached_vid ) {
+                                        $vidPost = get_post( $attached_vid );
+                                        //echo get_the_title( $attached_podcast);
+                                        echo '<li><a href="'.get_permalink( $attached_vid ).'">'.get_the_title( $attached_vid ).'</a></li>';
+                                    }
+                                }
                                 ?>
                             </div>
                         </div>
