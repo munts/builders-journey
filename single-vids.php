@@ -17,6 +17,7 @@ $images = get_field('gallery');
 $vidShortDescription = wpautop( get_post_meta($post->ID, '_confluence_two_col_video_short_description', true));
 $vidDescription = wpautop( get_post_meta($post->ID, '_confluence_two_col_video_description', true));
 $vidId = get_post_meta($post->ID, '_confluence_two_col_video_episode_id', true);
+$vidTitle = the_title();
 
 ?>
     <div id="main-container" class="container-fluid">
